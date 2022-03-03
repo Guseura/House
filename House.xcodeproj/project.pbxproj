@@ -36,6 +36,7 @@
 		4ADD2A8A27D11EF9001F143C /* BasePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADD2A8927D11EF9001F143C /* BasePopupViewController.swift */; };
 		4ADD2A9127D12006001F143C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADD2A9027D12006001F143C /* State.swift */; };
 		4ADD2A9327D12352001F143C /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADD2A9227D12352001F143C /* Language.swift */; };
+		4ADD2A9927D12E4A001F143C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4ADD2A9B27D12E4A001F143C /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,8 @@
 		4ADD2A9227D12352001F143C /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		4ADD2A9427D12491001F143C /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		4ADD2A9527D12491001F143C /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
+		4ADD2A9A27D12E4A001F143C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4ADD2A9C27D12E4F001F143C /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,7 @@
 				4ADD2A4A27CFA147001F143C /* Assets.xcassets */,
 				4ADD2A5527D0B13B001F143C /* Application */,
 				4ADD2A5A27D0B59A001F143C /* Extensions */,
+				4ADD2A9627D12DEF001F143C /* Localization */,
 				4ADD2A8027D116DA001F143C /* Model */,
 				4ADD2A8627D11E3A001F143C /* Screens */,
 				4ADD2A5D27D0B624001F143C /* Util */,
@@ -234,6 +238,14 @@
 			path = Popups;
 			sourceTree = "<group>";
 		};
+		4ADD2A9627D12DEF001F143C /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				4ADD2A9B27D12E4A001F143C /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -293,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ADD2A4E27CFA147001F143C /* LaunchScreen.storyboard in Resources */,
+				4ADD2A9927D12E4A001F143C /* Localizable.strings in Resources */,
 				4ADD2A4B27CFA147001F143C /* Assets.xcassets in Resources */,
 				4ADD2A4927CFA146001F143C /* Main.storyboard in Resources */,
 			);
@@ -353,6 +366,15 @@
 				4ADD2A9427D12491001F143C /* uk */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		4ADD2A9B27D12E4A001F143C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4ADD2A9A27D12E4A001F143C /* en */,
+				4ADD2A9C27D12E4F001F143C /* uk */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

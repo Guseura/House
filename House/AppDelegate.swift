@@ -1,11 +1,5 @@
-//
-//  AppDelegate.swift
-//  House
-//
-//  Created by Yurij on 02.03.2022.
-//
-
 import UIKit
+import Firebase
 import CoreData
 
 @main
@@ -14,6 +8,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        FirebaseApp.configure()
         State.shared.setLanguage(to: Language.Code.init(Locale.current.regionCode ?? "en"))
         return true
     }

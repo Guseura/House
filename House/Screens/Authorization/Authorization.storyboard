@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,28 +29,53 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="20"/>
                                 <state key="normal" title="Continue"/>
+                                <connections>
+                                    <action selector="continueButtonPressed:" destination="g14-5K-5XA" eventType="touchUpInside" id="uaH-Eu-yln"/>
+                                </connections>
                             </button>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="FRK-JZ-Yof">
-                                <rect key="frame" x="146" y="692" width="122" height="28"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="FRK-JZ-Yof">
+                                <rect key="frame" x="146" y="702" width="122" height="8"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="8" id="1RO-pt-LT9"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" systemColor="systemGray6Color"/>
+                                <color key="currentPageIndicatorTintColor" name="BAccentColor"/>
                             </pageControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8m8-xC-FpX">
+                                <rect key="frame" x="0.0" y="44" width="414" height="658"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BQn-Iq-iKz">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X8e-R9-Lvr"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BMainColor"/>
                         <constraints>
                             <constraint firstItem="FRK-JZ-Yof" firstAttribute="centerX" secondItem="De4-kn-dOU" secondAttribute="centerX" id="4Bn-9n-4tZ"/>
-                            <constraint firstItem="dBt-60-Qkf" firstAttribute="top" secondItem="FRK-JZ-Yof" secondAttribute="bottom" constant="56" id="DgW-aw-8Lt"/>
+                            <constraint firstItem="dBt-60-Qkf" firstAttribute="top" secondItem="FRK-JZ-Yof" secondAttribute="bottom" constant="66" id="DgW-aw-8Lt"/>
+                            <constraint firstItem="8m8-xC-FpX" firstAttribute="leading" secondItem="X8e-R9-Lvr" secondAttribute="leading" id="K00-Ja-RZs"/>
                             <constraint firstItem="dBt-60-Qkf" firstAttribute="leading" secondItem="X8e-R9-Lvr" secondAttribute="leading" constant="32" id="NdE-4E-NJP"/>
+                            <constraint firstItem="FRK-JZ-Yof" firstAttribute="top" secondItem="8m8-xC-FpX" secondAttribute="bottom" id="TEu-Xv-4vH"/>
+                            <constraint firstItem="8m8-xC-FpX" firstAttribute="trailing" secondItem="X8e-R9-Lvr" secondAttribute="trailing" id="aTC-pl-MPL"/>
+                            <constraint firstItem="8m8-xC-FpX" firstAttribute="top" secondItem="X8e-R9-Lvr" secondAttribute="top" id="ch4-id-g9G"/>
                             <constraint firstItem="X8e-R9-Lvr" firstAttribute="trailing" secondItem="dBt-60-Qkf" secondAttribute="trailing" constant="32" id="dWE-2W-9Ns"/>
                             <constraint firstItem="X8e-R9-Lvr" firstAttribute="bottom" secondItem="dBt-60-Qkf" secondAttribute="bottom" constant="28" id="f3L-qU-9qr"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="8m8-xC-FpX" id="tSg-00-5SQ"/>
                         <outlet property="continueButton" destination="dBt-60-Qkf" id="oko-S8-SlG"/>
+                        <outlet property="pageControl" destination="FRK-JZ-Yof" id="R9X-8S-ECh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drM-aG-GSM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-642" y="119"/>
+            <point key="canvasLocation" x="-642.02898550724638" y="118.52678571428571"/>
         </scene>
         <!--Authorization View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -68,8 +94,17 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="BAccentColor">
+            <color red="0.17299999296665192" green="0.77300000190734863" blue="0.2630000114440918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BMainColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

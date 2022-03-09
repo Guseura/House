@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,9 @@
 		4A7BD7DD27D8DE2D001D73D8 /* AvenirLTStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4A7BD7DA27D8DE2D001D73D8 /* AvenirLTStd-Book.otf */; };
 		4A7BD7DE27D8DE2D001D73D8 /* AvenirLTStd-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4A7BD7DB27D8DE2D001D73D8 /* AvenirLTStd-Roman.otf */; };
 		4A7BD7E027D8E547001D73D8 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7BD7DF27D8E547001D73D8 /* Authorization.swift */; };
+		4AC2580227D917E500F18112 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC2580027D917E500F18112 /* OnboardingCollectionViewCell.swift */; };
+		4AC2580327D917E500F18112 /* OnboardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC2580127D917E500F18112 /* OnboardingCollectionViewCell.xib */; };
+		4AC2580527D91A8C00F18112 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC2580427D91A8C00F18112 /* Onboarding.swift */; };
 		4ADD2A4227CFA146001F143C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADD2A4127CFA146001F143C /* AppDelegate.swift */; };
 		4ADD2A4427CFA146001F143C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADD2A4327CFA146001F143C /* SceneDelegate.swift */; };
 		4ADD2A4627CFA146001F143C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADD2A4527CFA146001F143C /* ViewController.swift */; };
@@ -50,7 +53,6 @@
 		4ADD2AA027D131D9001F143C /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ADD2A9F27D131D9001F143C /* Authorization.storyboard */; };
 		4ADD2AA227D13382001F143C /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADD2AA127D13382001F143C /* AuthorizationViewController.swift */; };
 		4AE8D6AC27D39FF3005B72E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AE8D6AB27D39FF3005B72E6 /* GoogleService-Info.plist */; };
-		4AE8D6B227D3B80D005B72E6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4AE8D6B127D3B80D005B72E6 /* FirebaseAuth */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,9 @@
 		4A7BD7DA27D8DE2D001D73D8 /* AvenirLTStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Book.otf"; sourceTree = "<group>"; };
 		4A7BD7DB27D8DE2D001D73D8 /* AvenirLTStd-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Roman.otf"; sourceTree = "<group>"; };
 		4A7BD7DF27D8E547001D73D8 /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
+		4AC2580027D917E500F18112 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		4AC2580127D917E500F18112 /* OnboardingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCollectionViewCell.xib; sourceTree = "<group>"; };
+		4AC2580427D91A8C00F18112 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		4ADD2A3E27CFA146001F143C /* House.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = House.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ADD2A4127CFA146001F143C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4ADD2A4327CFA146001F143C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,7 +114,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AE8D6B227D3B80D005B72E6 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +156,15 @@
 				4A7BD7DB27D8DE2D001D73D8 /* AvenirLTStd-Roman.otf */,
 			);
 			path = Avenir;
+			sourceTree = "<group>";
+		};
+		4AC257FF27D917AD00F18112 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4AC2580027D917E500F18112 /* OnboardingCollectionViewCell.swift */,
+				4AC2580127D917E500F18112 /* OnboardingCollectionViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		4ADD2A3527CFA146001F143C = {
@@ -252,6 +265,7 @@
 				4ADD2A8127D116F9001F143C /* House.xcdatamodeld */,
 				4ADD2A8427D1170E001F143C /* User.swift */,
 				4ADD2A9227D12352001F143C /* Language.swift */,
+				4AC2580427D91A8C00F18112 /* Onboarding.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -320,6 +334,7 @@
 		4ADD2A9D27D1306C001F143C /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
+				4AC257FF27D917AD00F18112 /* Cells */,
 				4ADD2A9E27D131BF001F143C /* Controllers */,
 				4ADD2A9F27D131D9001F143C /* Authorization.storyboard */,
 			);
@@ -352,7 +367,6 @@
 			);
 			name = House;
 			packageProductDependencies = (
-				4AE8D6B127D3B80D005B72E6 /* FirebaseAuth */,
 			);
 			productName = House;
 			productReference = 4ADD2A3E27CFA146001F143C /* House.app */;
@@ -383,7 +397,6 @@
 			);
 			mainGroup = 4ADD2A3527CFA146001F143C;
 			packageReferences = (
-				4AE8D6B027D3B80D005B72E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 4ADD2A3F27CFA146001F143C /* Products */;
 			projectDirPath = "";
@@ -403,6 +416,7 @@
 				4A7BD7DE27D8DE2D001D73D8 /* AvenirLTStd-Roman.otf in Resources */,
 				4ADD2AA027D131D9001F143C /* Authorization.storyboard in Resources */,
 				4ADD2A9927D12E4A001F143C /* Localizable.strings in Resources */,
+				4AC2580327D917E500F18112 /* OnboardingCollectionViewCell.xib in Resources */,
 				4A7BD7DD27D8DE2D001D73D8 /* AvenirLTStd-Book.otf in Resources */,
 				4ADD2A4B27CFA147001F143C /* Assets.xcassets in Resources */,
 				4A7BD7DC27D8DE2D001D73D8 /* AvenirLTStd-Black.otf in Resources */,
@@ -436,6 +450,7 @@
 				4ADD2A4627CFA146001F143C /* ViewController.swift in Sources */,
 				4ADD2A4227CFA146001F143C /* AppDelegate.swift in Sources */,
 				4A7BD7C227D77919001D73D8 /* OnboardingViewController.swift in Sources */,
+				4AC2580527D91A8C00F18112 /* Onboarding.swift in Sources */,
 				4ADD2A4427CFA146001F143C /* SceneDelegate.swift in Sources */,
 				4ADD2A8527D1170E001F143C /* User.swift in Sources */,
 				4ADD2A7727D114B7001F143C /* UINavigationController.swift in Sources */,
@@ -451,6 +466,7 @@
 				4ADD2A8327D116F9001F143C /* House.xcdatamodeld in Sources */,
 				4ADD2A8A27D11EF9001F143C /* BasePopupViewController.swift in Sources */,
 				4ADD2A9127D12006001F143C /* State.swift in Sources */,
+				4AC2580227D917E500F18112 /* OnboardingCollectionViewCell.swift in Sources */,
 				4ADD2A7327D11416001F143C /* UIImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -666,25 +682,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		4AE8D6B027D3B80D005B72E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 8.12.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		4AE8D6B127D3B80D005B72E6 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4AE8D6B027D3B80D005B72E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		4ADD2A8127D116F9001F143C /* House.xcdatamodeld */ = {

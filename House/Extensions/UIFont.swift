@@ -4,43 +4,58 @@ extension UIFont {
 
     // MARK: - Avenir Font
     
-    class Avenir: UIFont {
+    public enum AvenirWeight {
+        case black
+        case book
+        case roman
+    }
+    
+    public static func avenirFont(ofSize size: CGFloat, weight: AvenirWeight) -> UIFont {
         
-        public static func black(size: CGFloat) -> UIFont {
-            return UIFont(name: "AvenirLTStd-Black", size: size) ?? UIFont.systemFont(ofSize: size)
+        var avenirWeight: String = "Book"
+        
+        switch weight {
+        
+        case .black:
+            avenirWeight = "Black"
+        case .book:
+            avenirWeight = "Book"
+        case .roman:
+            avenirWeight = "Roman"
+            
         }
         
-        public static func book(size: CGFloat) -> UIFont {
-            return UIFont(name: "AvenirLTStd-Book", size: size) ?? UIFont.systemFont(ofSize: size)
-        }
-
-        public static func roman(size: CGFloat) -> UIFont {
-            return UIFont(name: "AvenirLTStd-Roman", size: size) ?? UIFont.systemFont(ofSize: size)
-        }
-
+        return UIFont(name: "AvenirLTStd-\(avenirWeight)", size: size) ?? .systemFont(ofSize: size, weight: .medium)
     }
     
     
     // MARK: - Circular Font
     
-    class CircularStd: UIFont {
+    public enum CircularWeight {
+        case black
+        case bold
+        case book
+        case medium
+    }
+    
+    public static func circularFont(ofSize size: CGFloat, weight: CircularWeight) -> UIFont {
         
-        public static func black(size: CGFloat) -> UIFont {
-            return UIFont(name: "CircularStd-Black", size: size) ?? UIFont.systemFont(ofSize: size)
+        var circularWeight: String = "Book"
+        
+        switch weight {
+        
+        case .black:
+            circularWeight = "Black"
+        case .bold:
+            circularWeight = "Bold"
+        case .book:
+            circularWeight = "Book"
+        case .medium:
+            circularWeight = "Medium"
+        
         }
         
-        public static func bold(size: CGFloat) -> UIFont {
-            return UIFont(name: "CircularStd-Bold", size: size) ?? UIFont.systemFont(ofSize: size)
-        }
-        
-        public static func book(size: CGFloat) -> UIFont {
-            return UIFont(name: "CircularStd-Book", size: size) ?? UIFont.systemFont(ofSize: size)
-        }
-        
-        public static func medium(size: CGFloat) -> UIFont {
-            return UIFont(name: "CircularStd-Medium", size: size) ?? UIFont.systemFont(ofSize: size)
-        }
-        
+        return UIFont(name: "CircularStd-\(circularWeight)", size: size) ?? .systemFont(ofSize: size, weight: .medium)
     }
     
 }

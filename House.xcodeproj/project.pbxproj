@@ -16,6 +16,7 @@
 		4A7BD7DC27D8DE2D001D73D8 /* AvenirLTStd-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4A7BD7D927D8DE2C001D73D8 /* AvenirLTStd-Black.otf */; };
 		4A7BD7DD27D8DE2D001D73D8 /* AvenirLTStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4A7BD7DA27D8DE2D001D73D8 /* AvenirLTStd-Book.otf */; };
 		4A7BD7DE27D8DE2D001D73D8 /* AvenirLTStd-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4A7BD7DB27D8DE2D001D73D8 /* AvenirLTStd-Roman.otf */; };
+		4A7BD7E027D8E547001D73D8 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7BD7DF27D8E547001D73D8 /* Authorization.swift */; };
 		4ADD2A4227CFA146001F143C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADD2A4127CFA146001F143C /* AppDelegate.swift */; };
 		4ADD2A4427CFA146001F143C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADD2A4327CFA146001F143C /* SceneDelegate.swift */; };
 		4ADD2A4627CFA146001F143C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADD2A4527CFA146001F143C /* ViewController.swift */; };
@@ -62,6 +63,7 @@
 		4A7BD7D927D8DE2C001D73D8 /* AvenirLTStd-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Black.otf"; sourceTree = "<group>"; };
 		4A7BD7DA27D8DE2D001D73D8 /* AvenirLTStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Book.otf"; sourceTree = "<group>"; };
 		4A7BD7DB27D8DE2D001D73D8 /* AvenirLTStd-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Roman.otf"; sourceTree = "<group>"; };
+		4A7BD7DF27D8E547001D73D8 /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		4ADD2A3E27CFA146001F143C /* House.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = House.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ADD2A4127CFA146001F143C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4ADD2A4327CFA146001F143C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				4ADD2A6327D0B752001F143C /* Storyboards.swift */,
+				4A7BD7DF27D8E547001D73D8 /* Authorization.swift */,
 				4ADD2A6527D0B767001F143C /* Main.swift */,
 				4ADD2A6727D0B77B001F143C /* Popup.swift */,
 				4ADD2A6927D0B79E001F143C /* Cells.swift */,
@@ -428,6 +431,7 @@
 				4ADD2A6C27D0B7DA001F143C /* Constants.swift in Sources */,
 				4ADD2A6127D0B724001F143C /* UICollectionView.swift in Sources */,
 				4ADD2A5F27D0B638001F143C /* Util.swift in Sources */,
+				4A7BD7E027D8E547001D73D8 /* Authorization.swift in Sources */,
 				4ADD2A6627D0B767001F143C /* Main.swift in Sources */,
 				4ADD2A4627CFA146001F143C /* ViewController.swift in Sources */,
 				4ADD2A4227CFA146001F143C /* AppDelegate.swift in Sources */,

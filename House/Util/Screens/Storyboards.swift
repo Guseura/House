@@ -2,6 +2,7 @@ import UIKit
 
 public enum Storyboard: String {
     case LaunchScreen   = "LaunchScreen"
+    case Authorization  = "Authorization"
     case Main           = "Main"
 }
 

@@ -7,6 +7,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="CircularStd-Bold.ttf">
+            <string>CircularStd-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Onboarding View Controller-->
         <scene sceneID="Zxv-gk-B1P">
@@ -17,18 +22,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBt-60-Qkf" customClass="MainButton" customModule="House" customModuleProvider="target">
-                                <rect key="frame" x="54" y="776" width="306" height="58"/>
+                                <rect key="frame" x="32" y="776" width="350" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="uUT-9h-7RU"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="20"/>
                                 <state key="normal" title="Continue"/>
                             </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="FRK-JZ-Yof">
+                                <rect key="frame" x="146" y="692" width="122" height="28"/>
+                            </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X8e-R9-Lvr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dBt-60-Qkf" firstAttribute="leading" secondItem="X8e-R9-Lvr" secondAttribute="leading" constant="54" id="NdE-4E-NJP"/>
-                            <constraint firstItem="X8e-R9-Lvr" firstAttribute="trailing" secondItem="dBt-60-Qkf" secondAttribute="trailing" constant="54" id="dWE-2W-9Ns"/>
+                            <constraint firstItem="FRK-JZ-Yof" firstAttribute="centerX" secondItem="De4-kn-dOU" secondAttribute="centerX" id="4Bn-9n-4tZ"/>
+                            <constraint firstItem="dBt-60-Qkf" firstAttribute="top" secondItem="FRK-JZ-Yof" secondAttribute="bottom" constant="56" id="DgW-aw-8Lt"/>
+                            <constraint firstItem="dBt-60-Qkf" firstAttribute="leading" secondItem="X8e-R9-Lvr" secondAttribute="leading" constant="32" id="NdE-4E-NJP"/>
+                            <constraint firstItem="X8e-R9-Lvr" firstAttribute="trailing" secondItem="dBt-60-Qkf" secondAttribute="trailing" constant="32" id="dWE-2W-9Ns"/>
                             <constraint firstItem="X8e-R9-Lvr" firstAttribute="bottom" secondItem="dBt-60-Qkf" secondAttribute="bottom" constant="28" id="f3L-qU-9qr"/>
                         </constraints>
                     </view>

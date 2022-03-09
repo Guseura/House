@@ -2,8 +2,16 @@ import UIKit
 
 extension UIColor {
     
-    public static var HBlack: UIColor {
-        return UIColor(named: "HBlack") ?? .black
-    }
+    // MARK: - Text
+    
+    public static var TMainColor = UIColor(named: "TMainColor") ?? .black
+    
+    
+    // MARK: - Background
+    
+    public static var BMainColor = UIColor(named: "BMainColor") ?? .white
+    public static var BAccentColor = UIColor(named: "BAccentColor") ?? .green
+    
+    
     
 }

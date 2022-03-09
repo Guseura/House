@@ -1,16 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17150" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17122"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Onboarding View Controller-->
+        <scene sceneID="Zxv-gk-B1P">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingViewController" id="g14-5K-5XA" customClass="OnboardingViewController" customModule="House" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="De4-kn-dOU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBt-60-Qkf" customClass="MainButton" customModule="House" customModuleProvider="target">
+                                <rect key="frame" x="54" y="776" width="306" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="uUT-9h-7RU"/>
+                                </constraints>
+                                <state key="normal" title="Continue"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="X8e-R9-Lvr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dBt-60-Qkf" firstAttribute="leading" secondItem="X8e-R9-Lvr" secondAttribute="leading" constant="54" id="NdE-4E-NJP"/>
+                            <constraint firstItem="X8e-R9-Lvr" firstAttribute="trailing" secondItem="dBt-60-Qkf" secondAttribute="trailing" constant="54" id="dWE-2W-9Ns"/>
+                            <constraint firstItem="X8e-R9-Lvr" firstAttribute="bottom" secondItem="dBt-60-Qkf" secondAttribute="bottom" constant="28" id="f3L-qU-9qr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="continueButton" destination="dBt-60-Qkf" id="oko-S8-SlG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="drM-aG-GSM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-642" y="119"/>
+        </scene>
+        <!--Authorization View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthorizationViewController" id="Y6W-OH-hqX" customClass="AuthorizationViewController" customModule="House" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,6 +53,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="119"/>
         </scene>
     </scenes>
     <resources>

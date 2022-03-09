@@ -60,5 +60,15 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>CircularStd-Black</string>
+		<string>CircularStd-Bold</string>
+		<string>CircularStd-Book</string>
+		<string>CircularStd-Medium</string>
+		<string>AvenirLTStd-Black</string>
+		<string>AvenirLTStd-Book</string>
+		<string>AvenirLTStd-Roman</string>
+	</array>
 </dict>
 </plist>

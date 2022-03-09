@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A7BD7C227D77919001D73D8 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7BD7C127D77919001D73D8 /* OnboardingViewController.swift */; };
+		4A7BD7C427D8DA0C001D73D8 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7BD7C327D8DA0C001D73D8 /* MainButton.swift */; };
+		4A7BD7D227D8DDEF001D73D8 /* CircularStd-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A7BD7CA27D8DDEF001D73D8 /* CircularStd-Bold.ttf */; };
+		4A7BD7D327D8DDEF001D73D8 /* CircularStd-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A7BD7CB27D8DDEF001D73D8 /* CircularStd-Black.ttf */; };
+		4A7BD7D527D8DDEF001D73D8 /* CircularStd-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A7BD7CD27D8DDEF001D73D8 /* CircularStd-Book.ttf */; };
+		4A7BD7D627D8DDEF001D73D8 /* CircularStd-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A7BD7CE27D8DDEF001D73D8 /* CircularStd-Medium.ttf */; };
+		4A7BD7DC27D8DE2D001D73D8 /* AvenirLTStd-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4A7BD7D927D8DE2C001D73D8 /* AvenirLTStd-Black.otf */; };
+		4A7BD7DD27D8DE2D001D73D8 /* AvenirLTStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4A7BD7DA27D8DE2D001D73D8 /* AvenirLTStd-Book.otf */; };
+		4A7BD7DE27D8DE2D001D73D8 /* AvenirLTStd-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4A7BD7DB27D8DE2D001D73D8 /* AvenirLTStd-Roman.otf */; };
 		4ADD2A4227CFA146001F143C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADD2A4127CFA146001F143C /* AppDelegate.swift */; };
 		4ADD2A4427CFA146001F143C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADD2A4327CFA146001F143C /* SceneDelegate.swift */; };
 		4ADD2A4627CFA146001F143C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADD2A4527CFA146001F143C /* ViewController.swift */; };
@@ -44,6 +53,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A7BD7C127D77919001D73D8 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		4A7BD7C327D8DA0C001D73D8 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
+		4A7BD7CA27D8DDEF001D73D8 /* CircularStd-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Bold.ttf"; sourceTree = "<group>"; };
+		4A7BD7CB27D8DDEF001D73D8 /* CircularStd-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Black.ttf"; sourceTree = "<group>"; };
+		4A7BD7CD27D8DDEF001D73D8 /* CircularStd-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Book.ttf"; sourceTree = "<group>"; };
+		4A7BD7CE27D8DDEF001D73D8 /* CircularStd-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Medium.ttf"; sourceTree = "<group>"; };
+		4A7BD7D927D8DE2C001D73D8 /* AvenirLTStd-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Black.otf"; sourceTree = "<group>"; };
+		4A7BD7DA27D8DE2D001D73D8 /* AvenirLTStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Book.otf"; sourceTree = "<group>"; };
+		4A7BD7DB27D8DE2D001D73D8 /* AvenirLTStd-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Roman.otf"; sourceTree = "<group>"; };
 		4ADD2A3E27CFA146001F143C /* House.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = House.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ADD2A4127CFA146001F143C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4ADD2A4327CFA146001F143C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +114,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A7BD7C527D8DDA3001D73D8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4A7BD7C627D8DDB8001D73D8 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4A7BD7C627D8DDB8001D73D8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4A7BD7D827D8DE15001D73D8 /* Avenir */,
+				4A7BD7C727D8DDD1001D73D8 /* Circular-Std */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		4A7BD7C727D8DDD1001D73D8 /* Circular-Std */ = {
+			isa = PBXGroup;
+			children = (
+				4A7BD7CB27D8DDEF001D73D8 /* CircularStd-Black.ttf */,
+				4A7BD7CA27D8DDEF001D73D8 /* CircularStd-Bold.ttf */,
+				4A7BD7CD27D8DDEF001D73D8 /* CircularStd-Book.ttf */,
+				4A7BD7CE27D8DDEF001D73D8 /* CircularStd-Medium.ttf */,
+			);
+			path = "Circular-Std";
+			sourceTree = "<group>";
+		};
+		4A7BD7D827D8DE15001D73D8 /* Avenir */ = {
+			isa = PBXGroup;
+			children = (
+				4A7BD7D927D8DE2C001D73D8 /* AvenirLTStd-Black.otf */,
+				4A7BD7DA27D8DE2D001D73D8 /* AvenirLTStd-Book.otf */,
+				4A7BD7DB27D8DE2D001D73D8 /* AvenirLTStd-Roman.otf */,
+			);
+			path = Avenir;
+			sourceTree = "<group>";
+		};
 		4ADD2A3527CFA146001F143C = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +176,7 @@
 				4ADD2A5A27D0B59A001F143C /* Extensions */,
 				4ADD2A9627D12DEF001F143C /* Localization */,
 				4ADD2A8027D116DA001F143C /* Model */,
+				4A7BD7C527D8DDA3001D73D8 /* Resources */,
 				4ADD2A8627D11E3A001F143C /* Screens */,
 				4ADD2A5D27D0B624001F143C /* Util */,
 				4ADD2A6D27D0B808001F143C /* Views */,
@@ -181,6 +238,7 @@
 		4ADD2A6D27D0B808001F143C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4A7BD7C327D8DA0C001D73D8 /* MainButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -269,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				4ADD2AA127D13382001F143C /* AuthorizationViewController.swift */,
+				4A7BD7C127D77919001D73D8 /* OnboardingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -338,11 +397,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ADD2A4E27CFA147001F143C /* LaunchScreen.storyboard in Resources */,
+				4A7BD7DE27D8DE2D001D73D8 /* AvenirLTStd-Roman.otf in Resources */,
 				4ADD2AA027D131D9001F143C /* Authorization.storyboard in Resources */,
 				4ADD2A9927D12E4A001F143C /* Localizable.strings in Resources */,
+				4A7BD7DD27D8DE2D001D73D8 /* AvenirLTStd-Book.otf in Resources */,
 				4ADD2A4B27CFA147001F143C /* Assets.xcassets in Resources */,
+				4A7BD7DC27D8DE2D001D73D8 /* AvenirLTStd-Black.otf in Resources */,
+				4A7BD7D227D8DDEF001D73D8 /* CircularStd-Bold.ttf in Resources */,
+				4A7BD7D627D8DDEF001D73D8 /* CircularStd-Medium.ttf in Resources */,
 				4ADD2A4927CFA146001F143C /* Main.storyboard in Resources */,
+				4A7BD7D527D8DDEF001D73D8 /* CircularStd-Book.ttf in Resources */,
 				4AE8D6AC27D39FF3005B72E6 /* GoogleService-Info.plist in Resources */,
+				4A7BD7D327D8DDEF001D73D8 /* CircularStd-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ADD2AA227D13382001F143C /* AuthorizationViewController.swift in Sources */,
+				4A7BD7C427D8DA0C001D73D8 /* MainButton.swift in Sources */,
 				4ADD2A7D27D11516001F143C /* String.swift in Sources */,
 				4ADD2A6827D0B77B001F143C /* Popup.swift in Sources */,
 				4ADD2A6F27D0B90A001F143C /* UIColor.swift in Sources */,
@@ -364,6 +431,7 @@
 				4ADD2A6627D0B767001F143C /* Main.swift in Sources */,
 				4ADD2A4627CFA146001F143C /* ViewController.swift in Sources */,
 				4ADD2A4227CFA146001F143C /* AppDelegate.swift in Sources */,
+				4A7BD7C227D77919001D73D8 /* OnboardingViewController.swift in Sources */,
 				4ADD2A4427CFA146001F143C /* SceneDelegate.swift in Sources */,
 				4ADD2A8527D1170E001F143C /* User.swift in Sources */,
 				4ADD2A7727D114B7001F143C /* UINavigationController.swift in Sources */,

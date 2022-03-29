@@ -2,7 +2,8 @@ import UIKit
 
 public enum Authorization: String, StoryboardScreen {
     
-    case onboarding = "OnboardingViewController"
+    case onboarding     = "OnboardingViewController"
+    case authorization  = "AuthorizationViewController"
 
     
 }

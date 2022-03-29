@@ -8,7 +8,10 @@ class AuthorizationViewController: BaseViewController {
     // Labels
     // Buttons
     // Image Views
-    // ...
+    
+    // Text Fields
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     // MARK: - Variables
     
@@ -26,7 +29,19 @@ class AuthorizationViewController: BaseViewController {
     // MARK: - Custom functions
     
     override func configureUI() {
+        configureTextFields()
+    }
+    
+    private func configureTextFields() {
+        emailTextField.attributedPlaceholder = NSAttributedString(
+            string: "Email",    // Localized Email
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.TLightGray]
+        )
         
+        passwordTextField.attributedPlaceholder = NSAttributedString(
+            string: "Password",    // Localized Password
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.TLightGray]
+        )
     }
     
     override func setupGestures() {

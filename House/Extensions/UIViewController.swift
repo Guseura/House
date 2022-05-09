@@ -25,40 +25,11 @@ extension UIViewController {
         )
     }
     
-    public func showAlreadySubscribedAlert(completion: (() -> ())? = nil) {
-        let alertOk = UIAlertAction(title: localized("alert.action.ok"), style: .default) { _ in
-            completion?() ?? ()
-        }
-        self.present(getAlert(title: localized("alert.subscribed.title"),
-                              message: localized("alert.subscribed.message"),
-                              actions: alertOk),
-                     animated: true,
-                     completion: nil
-        )
-    }
-    
-    public func showNotSubscriberAlert(completion: (() -> ())? = nil) {
-        let alertOk = UIAlertAction(title: localized("alert.action.ok"), style: .default) { _ in
-            completion?() ?? ()
-        }
-        self.present(getAlert(title: localized("alert.notSubscriber.title"),
-                              message: localized("alert.notSubscriber.message"),
-                              actions: alertOk),
-                     animated: true,
-                     completion: nil
-        )
-    }
-    
-    public func showRestoredAlert(completion: (() -> ())? = nil) {
-        let alertOk = UIAlertAction(title: localized("alert.action.ok"), style: .default) { _ in
-            completion?() ?? ()
-        }
-        self.present(getAlert(title: localized("alert.restored.title"),
-                              message: localized("alert.restored.message"),
-                              actions: alertOk),
-                     animated: true,
-                     completion: nil
-        )
+    public func showDefaultAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
     
 }

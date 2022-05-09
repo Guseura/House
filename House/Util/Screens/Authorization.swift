@@ -3,9 +3,10 @@ import UIKit
 public enum Authorization: String, StoryboardScreen {
     
     case onboarding     = "OnboardingViewController"
+    case authNavigation = "AuthorizationNavigationController"
     case authorization  = "AuthorizationViewController"
+    case registration   = "RegistrationViewController"
 
-    
 }
 
 extension Authorization {

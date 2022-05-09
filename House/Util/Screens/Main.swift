@@ -2,7 +2,7 @@ import UIKit
 
 public enum Main: String, StoryboardScreen {
     
-    case loading        = "ViewController"
+    case main = "MainViewController"
 
     
 }

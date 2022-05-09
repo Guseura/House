@@ -17,7 +17,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        window.rootViewController = OnboardingViewController.load(from: Authorization.onboarding)
+        if State.shared.isNotFirstLaunch() {
+            window.rootViewController = State.shared.isLoggedIn() ? MainViewController.load(from: Main.main) : UINavigationController.load(from: Authorization.authNavigation)
+        } else {
+            State.shared.setIsNotFirstLaunch()
+            window.rootViewController = OnboardingViewController.load(from: Authorization.onboarding)
+        }
         
         self.window = window
         window.makeKeyAndVisible()

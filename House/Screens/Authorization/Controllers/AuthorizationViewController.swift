@@ -52,4 +52,12 @@ class AuthorizationViewController: BaseViewController {
     
     // MARK: - @IBActions
     
+    @IBAction func registrationButtonPressed(_ sender: Any) {
+        
+        let registrationViewController = RegistrationViewController.load(from: Authorization.registration)
+        self.navigationController?.pushViewController(registrationViewController, animated: true)
+        
+    }
+    
+    
 }

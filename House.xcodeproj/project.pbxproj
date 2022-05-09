@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A2F74FD28266D0F00F5E9A0 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F74FC28266D0F00F5E9A0 /* RegistrationViewController.swift */; };
+		4A2F75002827C77F00F5E9A0 /* UserNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F74FF2827C77F00F5E9A0 /* UserNetwork.swift */; };
+		4A2F75022827CB8300F5E9A0 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F75012827CB8300F5E9A0 /* APIError.swift */; };
+		4A2F7504282908D100F5E9A0 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F7503282908D100F5E9A0 /* Dictionary.swift */; };
+		4A2F7506282908FA00F5E9A0 /* CharacterSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F7505282908FA00F5E9A0 /* CharacterSet.swift */; };
+		4A2F750828292E9F00F5E9A0 /* UserCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F750728292E9F00F5E9A0 /* UserCoreDataManager.swift */; };
 		4A49D29427F2F1BB00805FE5 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A49D29327F2F1BB00805FE5 /* SecondaryButton.swift */; };
 		4A7BD7C227D77919001D73D8 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7BD7C127D77919001D73D8 /* OnboardingViewController.swift */; };
 		4A7BD7C427D8DA0C001D73D8 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7BD7C327D8DA0C001D73D8 /* MainButton.swift */; };
@@ -23,7 +29,7 @@
 		4AC2580527D91A8C00F18112 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC2580427D91A8C00F18112 /* Onboarding.swift */; };
 		4ADD2A4227CFA146001F143C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADD2A4127CFA146001F143C /* AppDelegate.swift */; };
 		4ADD2A4427CFA146001F143C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADD2A4327CFA146001F143C /* SceneDelegate.swift */; };
-		4ADD2A4627CFA146001F143C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADD2A4527CFA146001F143C /* ViewController.swift */; };
+		4ADD2A4627CFA146001F143C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADD2A4527CFA146001F143C /* MainViewController.swift */; };
 		4ADD2A4927CFA146001F143C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ADD2A4727CFA146001F143C /* Main.storyboard */; };
 		4ADD2A4B27CFA147001F143C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ADD2A4A27CFA147001F143C /* Assets.xcassets */; };
 		4ADD2A4E27CFA147001F143C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ADD2A4C27CFA147001F143C /* LaunchScreen.storyboard */; };
@@ -57,6 +63,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A2F74FC28266D0F00F5E9A0 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		4A2F74FF2827C77F00F5E9A0 /* UserNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetwork.swift; sourceTree = "<group>"; };
+		4A2F75012827CB8300F5E9A0 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		4A2F7503282908D100F5E9A0 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		4A2F7505282908FA00F5E9A0 /* CharacterSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSet.swift; sourceTree = "<group>"; };
+		4A2F750728292E9F00F5E9A0 /* UserCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCoreDataManager.swift; sourceTree = "<group>"; };
 		4A49D29327F2F1BB00805FE5 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		4A7BD7C127D77919001D73D8 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		4A7BD7C327D8DA0C001D73D8 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
@@ -74,7 +86,7 @@
 		4ADD2A3E27CFA146001F143C /* House.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = House.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ADD2A4127CFA146001F143C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4ADD2A4327CFA146001F143C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4ADD2A4527CFA146001F143C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4ADD2A4527CFA146001F143C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4ADD2A4827CFA146001F143C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4ADD2A4A27CFA147001F143C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4ADD2A4D27CFA147001F143C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -122,6 +134,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A2F74FE2827C76200F5E9A0 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				4ADD2A8427D1170E001F143C /* User.swift */,
+				4A2F74FF2827C77F00F5E9A0 /* UserNetwork.swift */,
+				4A2F750728292E9F00F5E9A0 /* UserCoreDataManager.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		4A7BD7C527D8DDA3001D73D8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +237,9 @@
 		4ADD2A5A27D0B59A001F143C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4A2F7505282908FA00F5E9A0 /* CharacterSet.swift */,
+				4A2F7503282908D100F5E9A0 /* Dictionary.swift */,
+				4ADD2A7C27D11516001F143C /* String.swift */,
 				4ADD2A5B27D0B5F6001F143C /* UIButton.swift */,
 				4ADD2A6027D0B724001F143C /* UICollectionView.swift */,
 				4ADD2A6E27D0B90A001F143C /* UIColor.swift */,
@@ -225,7 +250,6 @@
 				4ADD2A7827D114D5001F143C /* UITableView.swift */,
 				4ADD2A7A27D114EE001F143C /* UIView.swift */,
 				4ADD2A7E27D11586001F143C /* UIViewController.swift */,
-				4ADD2A7C27D11516001F143C /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -266,9 +290,10 @@
 			isa = PBXGroup;
 			children = (
 				4ADD2A8127D116F9001F143C /* House.xcdatamodeld */,
-				4ADD2A8427D1170E001F143C /* User.swift */,
+				4A2F74FE2827C76200F5E9A0 /* User */,
 				4ADD2A9227D12352001F143C /* Language.swift */,
 				4AC2580427D91A8C00F18112 /* Onboarding.swift */,
+				4A2F75012827CB8300F5E9A0 /* APIError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -307,7 +332,7 @@
 		4ADD2A8D27D11F80001F143C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4ADD2A4527CFA146001F143C /* ViewController.swift */,
+				4ADD2A4527CFA146001F143C /* MainViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -349,6 +374,7 @@
 			children = (
 				4ADD2AA127D13382001F143C /* AuthorizationViewController.swift */,
 				4A7BD7C127D77919001D73D8 /* OnboardingViewController.swift */,
+				4A2F74FC28266D0F00F5E9A0 /* RegistrationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -441,19 +467,23 @@
 			files = (
 				4A49D29427F2F1BB00805FE5 /* SecondaryButton.swift in Sources */,
 				4ADD2AA227D13382001F143C /* AuthorizationViewController.swift in Sources */,
+				4A2F75002827C77F00F5E9A0 /* UserNetwork.swift in Sources */,
 				4A7BD7C427D8DA0C001D73D8 /* MainButton.swift in Sources */,
 				4ADD2A7D27D11516001F143C /* String.swift in Sources */,
 				4ADD2A6827D0B77B001F143C /* Popup.swift in Sources */,
 				4ADD2A6F27D0B90A001F143C /* UIColor.swift in Sources */,
 				4ADD2A8827D11E4F001F143C /* BaseViewController.swift in Sources */,
 				4ADD2A6C27D0B7DA001F143C /* Constants.swift in Sources */,
+				4A2F74FD28266D0F00F5E9A0 /* RegistrationViewController.swift in Sources */,
 				4ADD2A6127D0B724001F143C /* UICollectionView.swift in Sources */,
+				4A2F7504282908D100F5E9A0 /* Dictionary.swift in Sources */,
 				4ADD2A5F27D0B638001F143C /* Util.swift in Sources */,
 				4A7BD7E027D8E547001D73D8 /* Authorization.swift in Sources */,
 				4ADD2A6627D0B767001F143C /* Main.swift in Sources */,
-				4ADD2A4627CFA146001F143C /* ViewController.swift in Sources */,
+				4ADD2A4627CFA146001F143C /* MainViewController.swift in Sources */,
 				4ADD2A4227CFA146001F143C /* AppDelegate.swift in Sources */,
 				4A7BD7C227D77919001D73D8 /* OnboardingViewController.swift in Sources */,
+				4A2F75022827CB8300F5E9A0 /* APIError.swift in Sources */,
 				4AC2580527D91A8C00F18112 /* Onboarding.swift in Sources */,
 				4ADD2A4427CFA146001F143C /* SceneDelegate.swift in Sources */,
 				4ADD2A8527D1170E001F143C /* User.swift in Sources */,
@@ -463,12 +493,14 @@
 				4ADD2A7527D11483001F143C /* UILabel.swift in Sources */,
 				4ADD2A7F27D11586001F143C /* UIViewController.swift in Sources */,
 				4ADD2A5C27D0B5F6001F143C /* UIButton.swift in Sources */,
+				4A2F750828292E9F00F5E9A0 /* UserCoreDataManager.swift in Sources */,
 				4ADD2A6427D0B752001F143C /* Storyboards.swift in Sources */,
 				4ADD2A6A27D0B79E001F143C /* Cells.swift in Sources */,
 				4ADD2A7B27D114EE001F143C /* UIView.swift in Sources */,
 				4ADD2A9327D12352001F143C /* Language.swift in Sources */,
 				4ADD2A8327D116F9001F143C /* House.xcdatamodeld in Sources */,
 				4ADD2A8A27D11EF9001F143C /* BasePopupViewController.swift in Sources */,
+				4A2F7506282908FA00F5E9A0 /* CharacterSet.swift in Sources */,
 				4ADD2A9127D12006001F143C /* State.swift in Sources */,
 				4AC2580227D917E500F18112 /* OnboardingCollectionViewCell.swift in Sources */,
 				4ADD2A7327D11416001F143C /* UIImage.swift in Sources */,

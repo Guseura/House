@@ -28,7 +28,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwn-ao-yKB">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="463"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white-onboarding-1" translatesAutoresizingMaskIntoConstraints="NO" id="84R-IR-q9p">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboarding-1" translatesAutoresizingMaskIntoConstraints="NO" id="84R-IR-q9p">
                                         <rect key="frame" x="33.5" y="114" width="347" height="299"/>
                                     </imageView>
                                 </subviews>
@@ -101,7 +101,7 @@ in a convenient chat room.</string>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="white-onboarding-1" width="347" height="299"/>
+        <image name="onboarding-1" width="347" height="299"/>
         <namedColor name="TextMainColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

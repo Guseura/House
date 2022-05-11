@@ -3,6 +3,7 @@ import UIKit
 public enum Cell: String {
     
     case onboardingCell = "OnboardingCollectionViewCell"
+    case settingsCell   = "SettingsTableViewCell"
     
 }
 

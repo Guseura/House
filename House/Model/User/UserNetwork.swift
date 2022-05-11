@@ -10,7 +10,7 @@ struct UserNetwork {
     
     public func getUser(id: Int, completion: @escaping (Result<User, APIError>) -> Void) {
         
-        let requestURLString = userURL + "/get_by_id"
+        let requestURLString = userURL + "/get-by-id"
         guard let requestURL = URL(string: requestURLString) else { return }
         
         let parameters: [String: Any] = [

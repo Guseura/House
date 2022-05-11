@@ -63,14 +63,14 @@ class RegistrationViewController: BaseViewController {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
+     
     // MARK: - @objc functions
     
     @objc func keyboardWillShow(_ notification: Notification) {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             DispatchQueue.main.async {
                 self.bottomConstraint.constant = keyboardFrame.cgRectValue.height + 12 - safeAreaBottomInset
-                UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn) {
+                UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseInOut) {
                     self.view.layoutIfNeeded()
                 }
             }
@@ -80,7 +80,7 @@ class RegistrationViewController: BaseViewController {
     @objc func keyboardWillHide(_ notification: Notification) {
         DispatchQueue.main.async {
             self.bottomConstraint.constant = 28
-            UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn) {
+            UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseInOut) {
                 self.view.layoutIfNeeded()
             }
         }

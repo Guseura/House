@@ -1,6 +1,6 @@
 import UIKit
 
-class MainViewController: BaseViewController {
+class DialogsViewController: BaseViewController {
 
     // MARK: - @IBOutlets
     
@@ -38,3 +38,14 @@ class MainViewController: BaseViewController {
     // MARK: - @IBActions
     
 }
+
+/*
+ //           _._
+ //        .-'   `
+ //      __|__
+ //     /     \
+ //     |()_()|
+ //     \{o o}/
+ //      =\o/=
+ //       ^ ^
+ */

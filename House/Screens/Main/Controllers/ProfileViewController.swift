@@ -1,6 +1,6 @@
 import UIKit
 
-class MainViewController: BaseViewController {
+class ProfileViewController: BaseViewController {
 
     // MARK: - @IBOutlets
     
@@ -38,3 +38,4 @@ class MainViewController: BaseViewController {
     // MARK: - @IBActions
     
 }
+

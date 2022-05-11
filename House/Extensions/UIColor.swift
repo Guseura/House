@@ -4,14 +4,15 @@ extension UIColor {
     
     // MARK: - Text
     
-    public static var TMainColor        = UIColor(named: "TMainColor") ?? .black
-    public static var TSecondaryColor   = UIColor(named: "TSecondaryColor") ?? systemGray3
-    public static var TButtonColor      = UIColor(named: "TButtonColor") ?? .white
-    public static var TLightGray        = UIColor(named: "TLightGray") ?? .systemGray4
+    public static var TextMainColor         = UIColor(named: "TextMainColor") ?? .black
+    public static var TextSecondaryColor    = UIColor(named: "TextSecondaryColor") ?? systemGray3
+    public static var TextButtonColor       = UIColor(named: "TextButtonColor") ?? .white
+    public static var TextLightGray         = UIColor(named: "TextLightGray") ?? .systemGray4
     
     // MARK: - Background
     
-    public static var BMainColor        = UIColor(named: "BMainColor") ?? .white
-    public static var BAccentColor      = UIColor(named: "BAccentColor") ?? .green
+    public static var BackgroundMainColor   = UIColor(named: "BackgroundMainColor") ?? .white
+    public static var BackgroundAccentColor = UIColor(named: "BackgroundAccentColor") ?? .green
+    public static var TabBarColor           = UIColor(named: "TabBarColor") ?? .white
     
 }

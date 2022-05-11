@@ -12,8 +12,8 @@ class MainButton: UIButton {
     
     private func configureUI() {
         roundCorners(radius: 10)
-        backgroundColor = UIColor.BAccentColor
-        setTitleColor(UIColor.TButtonColor, for: .normal)
+        backgroundColor = UIColor.BackgroundAccentColor
+        setTitleColor(UIColor.TextButtonColor, for: .normal)
         titleLabel?.font = UIFont.circularFont(ofSize: 20, weight: .bold)
     }
     

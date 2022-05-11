@@ -47,7 +47,7 @@
                                     <constraint firstAttribute="height" constant="39.5" id="DVt-3c-WK7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="31"/>
-                                <color key="textColor" name="TMainColor"/>
+                                <color key="textColor" name="TextMainColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LO3-K7-mYF">
@@ -58,7 +58,7 @@
                                 <string key="text">Chat between residents of the house
 in a convenient chat room.</string>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                <color key="textColor" name="TSecondaryColor"/>
+                                <color key="textColor" name="TextSecondaryColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -102,10 +102,10 @@ in a convenient chat room.</string>
     </objects>
     <resources>
         <image name="white-onboarding-1" width="347" height="299"/>
-        <namedColor name="TMainColor">
+        <namedColor name="TextMainColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="TSecondaryColor">
+        <namedColor name="TextSecondaryColor">
             <color red="0.57999998331069946" green="0.57999998331069946" blue="0.57999998331069946" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>

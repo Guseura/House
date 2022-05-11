@@ -37,7 +37,7 @@ class OnboardingViewController: BaseViewController {
     // MARK: - Custom functions
     
     override func configureUI() {
-        self.view.backgroundColor = UIColor.BMainColor
+        self.view.backgroundColor = UIColor.BackgroundMainColor
     }
     
     

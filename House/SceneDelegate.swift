@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         
         if State.shared.isNotFirstLaunch() {
-            window.rootViewController = State.shared.isLoggedIn() ? MainViewController.load(from: Main.main) : UINavigationController.load(from: Authorization.authNavigation)
+            window.rootViewController = State.shared.isLoggedIn() ? UITabBarController.load(from: Main.tabBar) : UINavigationController.load(from: Authorization.authNavigation)
         } else {
             State.shared.setIsNotFirstLaunch()
             window.rootViewController = OnboardingViewController.load(from: Authorization.onboarding)

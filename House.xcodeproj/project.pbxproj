@@ -13,6 +13,9 @@
 		4A2F7504282908D100F5E9A0 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F7503282908D100F5E9A0 /* Dictionary.swift */; };
 		4A2F7506282908FA00F5E9A0 /* CharacterSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F7505282908FA00F5E9A0 /* CharacterSet.swift */; };
 		4A2F750828292E9F00F5E9A0 /* UserCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F750728292E9F00F5E9A0 /* UserCoreDataManager.swift */; };
+		4A2F750C282A705200F5E9A0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F750B282A705200F5E9A0 /* ProfileViewController.swift */; };
+		4A2F750E282A70A400F5E9A0 /* DialogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F750D282A70A400F5E9A0 /* DialogsViewController.swift */; };
+		4A2F7510282A923000F5E9A0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F750F282A923000F5E9A0 /* TabBarController.swift */; };
 		4A49D29427F2F1BB00805FE5 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A49D29327F2F1BB00805FE5 /* SecondaryButton.swift */; };
 		4A7BD7C227D77919001D73D8 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7BD7C127D77919001D73D8 /* OnboardingViewController.swift */; };
 		4A7BD7C427D8DA0C001D73D8 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7BD7C327D8DA0C001D73D8 /* MainButton.swift */; };
@@ -69,6 +72,9 @@
 		4A2F7503282908D100F5E9A0 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		4A2F7505282908FA00F5E9A0 /* CharacterSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSet.swift; sourceTree = "<group>"; };
 		4A2F750728292E9F00F5E9A0 /* UserCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCoreDataManager.swift; sourceTree = "<group>"; };
+		4A2F750B282A705200F5E9A0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4A2F750D282A70A400F5E9A0 /* DialogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogsViewController.swift; sourceTree = "<group>"; };
+		4A2F750F282A923000F5E9A0 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		4A49D29327F2F1BB00805FE5 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		4A7BD7C127D77919001D73D8 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		4A7BD7C327D8DA0C001D73D8 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
@@ -333,6 +339,9 @@
 			isa = PBXGroup;
 			children = (
 				4ADD2A4527CFA146001F143C /* MainViewController.swift */,
+				4A2F750B282A705200F5E9A0 /* ProfileViewController.swift */,
+				4A2F750D282A70A400F5E9A0 /* DialogsViewController.swift */,
+				4A2F750F282A923000F5E9A0 /* TabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -487,6 +496,7 @@
 				4AC2580527D91A8C00F18112 /* Onboarding.swift in Sources */,
 				4ADD2A4427CFA146001F143C /* SceneDelegate.swift in Sources */,
 				4ADD2A8527D1170E001F143C /* User.swift in Sources */,
+				4A2F750C282A705200F5E9A0 /* ProfileViewController.swift in Sources */,
 				4ADD2A7727D114B7001F143C /* UINavigationController.swift in Sources */,
 				4ADD2A7127D113FE001F143C /* UIFont.swift in Sources */,
 				4ADD2A7927D114D5001F143C /* UITableView.swift in Sources */,
@@ -498,10 +508,12 @@
 				4ADD2A6A27D0B79E001F143C /* Cells.swift in Sources */,
 				4ADD2A7B27D114EE001F143C /* UIView.swift in Sources */,
 				4ADD2A9327D12352001F143C /* Language.swift in Sources */,
+				4A2F750E282A70A400F5E9A0 /* DialogsViewController.swift in Sources */,
 				4ADD2A8327D116F9001F143C /* House.xcdatamodeld in Sources */,
 				4ADD2A8A27D11EF9001F143C /* BasePopupViewController.swift in Sources */,
 				4A2F7506282908FA00F5E9A0 /* CharacterSet.swift in Sources */,
 				4ADD2A9127D12006001F143C /* State.swift in Sources */,
+				4A2F7510282A923000F5E9A0 /* TabBarController.swift in Sources */,
 				4AC2580227D917E500F18112 /* OnboardingCollectionViewCell.swift in Sources */,
 				4ADD2A7327D11416001F143C /* UIImage.swift in Sources */,
 			);

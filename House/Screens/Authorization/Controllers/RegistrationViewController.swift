@@ -34,11 +34,24 @@ class RegistrationViewController: BaseViewController {
     // MARK: - Custom functions
     
     override func configureUI() {
-        
+        configureTextFields()
     }
     
-    override func setupGestures() {
+    private func configureTextFields() {
+        nameTextField.attributedPlaceholder = NSAttributedString(
+            string: "Full name",    // Localized Full name
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.TextLightGray]
+        )
         
+        emailTextField.attributedPlaceholder = NSAttributedString(
+            string: "Email",        // Localized Email
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.TextLightGray]
+        )
+        
+        passwordTextField.attributedPlaceholder = NSAttributedString(
+            string: "Password",    // Localized Password
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.TextLightGray]
+        )
     }
     
     private func addNotifications() {
@@ -77,43 +90,55 @@ class RegistrationViewController: BaseViewController {
     
     @IBAction func registerButtonPressed(_ sender: Any) {
         
+        // Check the fields
+        
         guard let name = nameTextField.text, name.replacingOccurrences(of: " ", with: "").count != 0 else {
+            if nameTextField.canBecomeFirstResponder {
+                nameTextField.becomeFirstResponder()
+            }
             showDefaultAlert(title: "Name is incorrect", message: "Make sure you have entered the name.")
             return
         }
         
         guard let email = emailTextField.text, email.isValidEmail() else {
+            if emailTextField.canBecomeFirstResponder {
+                emailTextField.becomeFirstResponder()
+            }
             showDefaultAlert(title: "Email is incorrect", message: "Make sure you have entered the correct email.")
             return
         }
         
         guard let password = passwordTextField.text, password.count >= 8, password.isValidPassword() else {
+            if passwordTextField.canBecomeFirstResponder {
+                passwordTextField.becomeFirstResponder()
+            }
             showDefaultAlert(title: "Password is incorrect", message: "Make sure that the password does not contain forbidden characters and is longer than 7 characters")
             return
         }
         
+        // Request
+        
         UserNetwork.shared.addUser(name: name, email: email, password: password, image: "image") { userCreationResult in
             
             switch userCreationResult {
-            
             case .success(let response):
-                
                 if response.status == true {
-                    
                     guard let id = response.id else { return }
-                    UserNetwork.shared.getUser(id: id) { userResult in
-                        switch userResult {
-                        case .success(let user):
-                            
-                            State.shared.setIsLoggedIn(to: true)
-                        case .failure(let userError):
-                            print(userError)
+                    DispatchQueue.main.async {
+                        UserCoreDataManager.shared.saveUser(id: id, name: name, email: email, image: "image") { _ in
+                            DispatchQueue.main.async {
+                                State.shared.setIsLoggedIn(to: true)
+                                State.shared.setUserId(to: id)
+                                let mainTabBarController = UITabBarController.load(from: Main.tabBar)
+                                mainTabBarController.modalPresentationStyle = .fullScreen
+                                self.present(mainTabBarController, animated: true, completion: nil)
+                            }
                         }
                     }
                     
                 } else {
                     DispatchQueue.main.async {
-                        self.showDefaultAlert(title: "Something went wrong", message: response.message)
+                        self.showDefaultAlert(title: "Already registered", message: response.message)
                     }
                 }
                 

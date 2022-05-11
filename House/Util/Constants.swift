@@ -6,6 +6,7 @@ enum UDKeys {
     static let language: String         = "language"
     static let isLoggedIn: String       = "isLoggedIn"
     static let isFirstLaunch: String    = "isFirstLaunch"
+    static let userId: String           = "userId"
 }
 
 public var safeAreaBottomInset: CGFloat {

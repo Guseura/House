@@ -35,4 +35,16 @@ class State {
         userDefaults.set(isLogged, forKey: UDKeys.isLoggedIn)
     }
     
+    public func setUserId(to id: Int) {
+        userDefaults.setValue(id, forKey: UDKeys.userId)
+    }
+    
+    public func getUserId() -> Int {
+        if isLoggedIn() {
+            return userDefaults.integer(forKey: UDKeys.userId)
+        }
+        return -1
+    }
+    
+    
 }

@@ -1,20 +1,23 @@
 import UIKit
 
 extension UIImage {
-
-    public static var isDarkMode = false
     
     internal enum Icons {
         
-        public static let back          = UIImage(named: "") ?? UIImage()
+        public static let back      = UIImage(named: "Back Icon") ?? UIImage()
+        public static let close     = UIImage(named: "Close Icon") ?? UIImage()
+        public static let lock      = UIImage(named: "Lock Icon") ?? UIImage()
+        public static let mail      = UIImage(named: "Mail Icon") ?? UIImage()
+        public static let scan      = UIImage(named: "Scan Icon") ?? UIImage()
+        public static let user      = UIImage(named: "User Icon") ?? UIImage()
         
     }
     
     internal enum Onboarding {
         
-        public static let first     = (isDarkMode ? UIImage(named: "dark-onboarding-1") : UIImage(named: "white-onboarding-1")) ?? UIImage()
-        public static let second    = (isDarkMode ? UIImage(named: "dark-onboarding-2") : UIImage(named: "white-onboarding-2")) ?? UIImage()
-        public static let third     = (isDarkMode ? UIImage(named: "dark-onboarding-3") : UIImage(named: "white-onboarding-3")) ?? UIImage()
+        public static let first     = UIImage(named: "onboarding-1") ?? UIImage()
+        public static let second    = UIImage(named: "onboarding-2") ?? UIImage()
+        public static let third     = UIImage(named: "onboarding-3") ?? UIImage()
         
     }
 

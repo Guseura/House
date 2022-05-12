@@ -34,7 +34,7 @@ class ProfileViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchUser()
+        isConnectedToNetwork() ? fetchUser() : fetchLocalUser()
     }
     
     override func viewDidLayoutSubviews() {
@@ -60,9 +60,45 @@ class ProfileViewController: BaseViewController {
                 DispatchQueue.main.async {
                     self.userNameLabel.text = user.name
                     self.userEmailLabel.text = user.email
+                    guard let imageData = Data(base64Encoded: user.image, options: .ignoreUnknownCharacters) else {
+                        self.userImageView.image = UIImage.Icons.avatar
+                        return
+                    }
+                    self.userImageView.image = UIImage(data: imageData) ?? UIImage.Icons.avatar
+                    
+                    UserCoreDataManager.shared.getUser(id: user.id) { isCompleted, userDB in
+                        if isCompleted {
+                            guard let userDB = userDB else {
+                                return
+                            }
+                            UserCoreDataManager.shared.deleteUser(user: userDB)
+                            UserCoreDataManager.shared.saveUser(id: user.id, name: user.name, email: user.email, image: user.image) { _ in }
+                        }
+                    }
+                    
                 }
             case .failure(let error):
                 print(error)
+            }
+        }
+    }
+    
+    private func fetchLocalUser() {
+        let userId = State.shared.getUserId()
+        UserCoreDataManager.shared.getUser(id: userId) { isCompleted, user in
+            if isCompleted {
+                guard let user = user else {
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.userNameLabel.text = user.name
+                    self.userEmailLabel.text = user.email
+                    guard let imageData = Data(base64Encoded: user.image!, options: .ignoreUnknownCharacters) else {
+                        self.userImageView.image = UIImage.Icons.avatar
+                        return
+                    }
+                    self.userImageView.image = UIImage(data: imageData) ?? UIImage.Icons.avatar
+                }
             }
         }
     }
@@ -74,11 +110,11 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
         case profileTableView:
-            return State.shared.profileSettings.count
+            return Setting.profileSettings.count
         case appTableView:
-            return State.shared.appSettings.count
+            return Setting.appSettings.count
         case otherTableView:
-            return State.shared.otherSettings.count
+            return Setting.otherSettings.count
         default:
             return 0
         }
@@ -89,18 +125,32 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch tableView {
         case profileTableView:
-            cell.cellLabel.text = State.shared.profileSettings[indexPath.row]
+            cell.cellLabel.text = Setting.profileSettings[indexPath.row].name
         case appTableView:
-            cell.cellLabel.text = State.shared.appSettings[indexPath.row]
+            cell.cellLabel.text = Setting.appSettings[indexPath.row].name
         case otherTableView:
-            cell.cellLabel.text = State.shared.otherSettings[indexPath.row]
+            cell.cellLabel.text = Setting.otherSettings[indexPath.row].name
         default:
-            ()
+            return cell
         }
     
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        switch tableView {
+        case profileTableView:
+            Setting.profileSettings[indexPath.row].completion(self)
+        case appTableView:
+            Setting.appSettings[indexPath.row].completion(self)
+        case otherTableView:
+            Setting.otherSettings[indexPath.row].completion(self)
+        default:
+            return
+            
+        }
+    }
     
 }
 

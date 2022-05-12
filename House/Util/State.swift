@@ -7,19 +7,6 @@ class State {
     // Shared variable
     public static var shared: State = State()
     
-    public let profileSettings: [String] = [
-        "Change username",
-        "Change image"
-    ]
-    public let appSettings: [String] = [
-        "Language"
-    ]
-    public let otherSettings: [String] = [
-        "Privacy Policy",
-        "Terms of use",
-        "Contact us"
-    ]
-    
     // MARK: - Functions
     
     public func getLanguageCode() -> Language.Code {

@@ -10,6 +10,9 @@ extension UIImage {
         public static let mail      = UIImage(named: "Mail Icon") ?? UIImage()
         public static let scan      = UIImage(named: "Scan Icon") ?? UIImage()
         public static let user      = UIImage(named: "User Icon") ?? UIImage()
+        public static let avatar    = UIImage(named: "Avatar Icon") ?? UIImage()
+        public static let checked   = UIImage(named: "Checked Icon") ?? UIImage()
+        public static let unchecked = UIImage(named: "Unchecked Icon") ?? UIImage()
         
     }
     

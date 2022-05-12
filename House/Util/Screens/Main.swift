@@ -2,11 +2,20 @@ import UIKit
 
 public enum Main: String, StoryboardScreen {
     
-    case tabBar = "TabBarController"
+    // Tab Bar
+    case tabBar     = "TabBarController"
+    
+    // Main
     case main       = "MainViewController"
+    
+    // Chats
     case dialogs    = "DialogsViewController"
+    
+    // Profile
     case profile    = "ProfileViewController"
-
+    case editName   = "EditNameViewController"
+    case editImage  = "EditImageViewController"
+    case language   = "LanguageViewController"
     
 }
 

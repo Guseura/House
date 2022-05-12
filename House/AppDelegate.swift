@@ -6,8 +6,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        State.shared.setLanguage(to: Language.Code.init(Locale.current.regionCode ?? "en"))
+        if !State.shared.isNotFirstLaunch() {
+            State.shared.setLanguage(to: Language.Code.init(Locale.current.regionCode ?? "en"))
+        }
         return true
     }
 

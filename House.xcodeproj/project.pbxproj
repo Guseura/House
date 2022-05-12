@@ -18,6 +18,13 @@
 		4A2F7510282A923000F5E9A0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F750F282A923000F5E9A0 /* TabBarController.swift */; };
 		4A2F7517282BE5C200F5E9A0 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F7515282BE5C200F5E9A0 /* SettingsTableViewCell.swift */; };
 		4A2F7518282BE5C200F5E9A0 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A2F7516282BE5C200F5E9A0 /* SettingsTableViewCell.xib */; };
+		4A2F751A282C1ECA00F5E9A0 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F7519282C1ECA00F5E9A0 /* LanguageViewController.swift */; };
+		4A2F751C282C1F0200F5E9A0 /* EditNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F751B282C1F0200F5E9A0 /* EditNameViewController.swift */; };
+		4A2F7520282C271700F5E9A0 /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F751E282C271700F5E9A0 /* LanguageTableViewCell.swift */; };
+		4A2F7521282C271700F5E9A0 /* LanguageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A2F751F282C271700F5E9A0 /* LanguageTableViewCell.xib */; };
+		4A2F7523282CEEA800F5E9A0 /* EditImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F7522282CEEA700F5E9A0 /* EditImageViewController.swift */; };
+		4A2F7525282CF3E600F5E9A0 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F7524282CF3E600F5E9A0 /* Settings.swift */; };
+		4A2F7528282D087900F5E9A0 /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F7527282D087900F5E9A0 /* ImagePickerManager.swift */; };
 		4A49D29427F2F1BB00805FE5 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A49D29327F2F1BB00805FE5 /* SecondaryButton.swift */; };
 		4A7BD7C227D77919001D73D8 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7BD7C127D77919001D73D8 /* OnboardingViewController.swift */; };
 		4A7BD7C427D8DA0C001D73D8 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7BD7C327D8DA0C001D73D8 /* MainButton.swift */; };
@@ -79,6 +86,13 @@
 		4A2F750F282A923000F5E9A0 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		4A2F7515282BE5C200F5E9A0 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		4A2F7516282BE5C200F5E9A0 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		4A2F7519282C1ECA00F5E9A0 /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
+		4A2F751B282C1F0200F5E9A0 /* EditNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNameViewController.swift; sourceTree = "<group>"; };
+		4A2F751E282C271700F5E9A0 /* LanguageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewCell.swift; sourceTree = "<group>"; };
+		4A2F751F282C271700F5E9A0 /* LanguageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageTableViewCell.xib; sourceTree = "<group>"; };
+		4A2F7522282CEEA700F5E9A0 /* EditImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditImageViewController.swift; sourceTree = "<group>"; };
+		4A2F7524282CF3E600F5E9A0 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		4A2F7527282D087900F5E9A0 /* ImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
 		4A49D29327F2F1BB00805FE5 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		4A7BD7C127D77919001D73D8 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		4A7BD7C327D8DA0C001D73D8 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
@@ -154,6 +168,25 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		4A2F751D282C1F1300F5E9A0 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4A2F750B282A705200F5E9A0 /* ProfileViewController.swift */,
+				4A2F7519282C1ECA00F5E9A0 /* LanguageViewController.swift */,
+				4A2F751B282C1F0200F5E9A0 /* EditNameViewController.swift */,
+				4A2F7522282CEEA700F5E9A0 /* EditImageViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		4A2F7526282D086600F5E9A0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4A2F7527282D087900F5E9A0 /* ImagePickerManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		4A7BD7C527D8DDA3001D73D8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +258,7 @@
 				4ADD2A5A27D0B59A001F143C /* Extensions */,
 				4ADD2A9627D12DEF001F143C /* Localization */,
 				4ADD2A8027D116DA001F143C /* Model */,
+				4A2F7526282D086600F5E9A0 /* Managers */,
 				4A7BD7C527D8DDA3001D73D8 /* Resources */,
 				4ADD2A8627D11E3A001F143C /* Screens */,
 				4ADD2A5D27D0B624001F143C /* Util */,
@@ -303,6 +337,7 @@
 				4A2F74FE2827C76200F5E9A0 /* User */,
 				4ADD2A9227D12352001F143C /* Language.swift */,
 				4AC2580427D91A8C00F18112 /* Onboarding.swift */,
+				4A2F7524282CF3E600F5E9A0 /* Settings.swift */,
 				4A2F75012827CB8300F5E9A0 /* APIError.swift */,
 			);
 			path = Model;
@@ -342,8 +377,8 @@
 		4ADD2A8D27D11F80001F143C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4A2F751D282C1F1300F5E9A0 /* Profile */,
 				4ADD2A4527CFA146001F143C /* MainViewController.swift */,
-				4A2F750B282A705200F5E9A0 /* ProfileViewController.swift */,
 				4A2F750D282A70A400F5E9A0 /* DialogsViewController.swift */,
 				4A2F750F282A923000F5E9A0 /* TabBarController.swift */,
 			);
@@ -355,6 +390,8 @@
 			children = (
 				4A2F7515282BE5C200F5E9A0 /* SettingsTableViewCell.swift */,
 				4A2F7516282BE5C200F5E9A0 /* SettingsTableViewCell.xib */,
+				4A2F751E282C271700F5E9A0 /* LanguageTableViewCell.swift */,
+				4A2F751F282C271700F5E9A0 /* LanguageTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -457,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ADD2A4E27CFA147001F143C /* LaunchScreen.storyboard in Resources */,
+				4A2F7521282C271700F5E9A0 /* LanguageTableViewCell.xib in Resources */,
 				4A7BD7DE27D8DE2D001D73D8 /* AvenirLTStd-Roman.otf in Resources */,
 				4ADD2AA027D131D9001F143C /* Authorization.storyboard in Resources */,
 				4ADD2A9927D12E4A001F143C /* Localizable.strings in Resources */,
@@ -487,14 +525,17 @@
 				4A7BD7C427D8DA0C001D73D8 /* MainButton.swift in Sources */,
 				4A2F7517282BE5C200F5E9A0 /* SettingsTableViewCell.swift in Sources */,
 				4ADD2A7D27D11516001F143C /* String.swift in Sources */,
+				4A2F7523282CEEA800F5E9A0 /* EditImageViewController.swift in Sources */,
 				4ADD2A6827D0B77B001F143C /* Popup.swift in Sources */,
 				4ADD2A6F27D0B90A001F143C /* UIColor.swift in Sources */,
 				4ADD2A8827D11E4F001F143C /* BaseViewController.swift in Sources */,
+				4A2F751C282C1F0200F5E9A0 /* EditNameViewController.swift in Sources */,
 				4ADD2A6C27D0B7DA001F143C /* Constants.swift in Sources */,
 				4A2F74FD28266D0F00F5E9A0 /* RegistrationViewController.swift in Sources */,
 				4ADD2A6127D0B724001F143C /* UICollectionView.swift in Sources */,
 				4A2F7504282908D100F5E9A0 /* Dictionary.swift in Sources */,
 				4ADD2A5F27D0B638001F143C /* Util.swift in Sources */,
+				4A2F7528282D087900F5E9A0 /* ImagePickerManager.swift in Sources */,
 				4A7BD7E027D8E547001D73D8 /* Authorization.swift in Sources */,
 				4ADD2A6627D0B767001F143C /* Main.swift in Sources */,
 				4ADD2A4627CFA146001F143C /* MainViewController.swift in Sources */,
@@ -511,6 +552,7 @@
 				4ADD2A7527D11483001F143C /* UILabel.swift in Sources */,
 				4ADD2A7F27D11586001F143C /* UIViewController.swift in Sources */,
 				4ADD2A5C27D0B5F6001F143C /* UIButton.swift in Sources */,
+				4A2F751A282C1ECA00F5E9A0 /* LanguageViewController.swift in Sources */,
 				4A2F750828292E9F00F5E9A0 /* UserCoreDataManager.swift in Sources */,
 				4ADD2A6427D0B752001F143C /* Storyboards.swift in Sources */,
 				4ADD2A6A27D0B79E001F143C /* Cells.swift in Sources */,
@@ -520,6 +562,8 @@
 				4ADD2A8327D116F9001F143C /* House.xcdatamodeld in Sources */,
 				4ADD2A8A27D11EF9001F143C /* BasePopupViewController.swift in Sources */,
 				4A2F7506282908FA00F5E9A0 /* CharacterSet.swift in Sources */,
+				4A2F7525282CF3E600F5E9A0 /* Settings.swift in Sources */,
+				4A2F7520282C271700F5E9A0 /* LanguageTableViewCell.swift in Sources */,
 				4ADD2A9127D12006001F143C /* State.swift in Sources */,
 				4A2F7510282A923000F5E9A0 /* TabBarController.swift in Sources */,
 				4AC2580227D917E500F18112 /* OnboardingCollectionViewCell.swift in Sources */,

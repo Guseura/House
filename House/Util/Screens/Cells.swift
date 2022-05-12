@@ -4,6 +4,7 @@ public enum Cell: String {
     
     case onboardingCell = "OnboardingCollectionViewCell"
     case settingsCell   = "SettingsTableViewCell"
+    case languageCell   = "LanguageTableViewCell"
     
 }
 

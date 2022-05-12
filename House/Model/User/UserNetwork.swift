@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 private let userURL = "http://localhost:8888/users"
 
@@ -95,6 +95,75 @@ struct UserNetwork {
             do {
                 let userCreationResponse = try JSONDecoder().decode(Response.self, from: data)
                 completion(.success(userCreationResponse))
+            }
+            catch {
+                completion(.failure(.decodingProblem))
+            }
+        }.resume()
+        
+    }
+    
+    // Change user name
+    
+    public func updateUser(name: String, id: Int, completion: @escaping (Result<Response, APIError>) -> Void) {
+        
+        let requestURLString = userURL + "/update-name"
+        guard let requestURL = URL(string: requestURLString) else { return }
+        
+        let parameters: [String: Any] = [
+            "name": name,
+            "id": id
+        ]
+        
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = "POST"
+        request.httpBody = parameters.percentEncoded()
+                
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else {
+                completion(.failure(.invalidData))
+                return
+            }
+            do {
+                let userUpdateNameResponse = try JSONDecoder().decode(Response.self, from: data)
+                completion(.success(userUpdateNameResponse))
+            }
+            catch {
+                completion(.failure(.decodingProblem))
+            }
+        }.resume()
+        
+    }
+    
+    public func updateUser(image: UIImage, id: Int, completion: @escaping (Result<Response, APIError>) -> Void) {
+        
+        guard let imageData = image.pngData() else {
+            completion(.failure(.invalidData))
+            return
+        }
+        
+        let strBase64image = imageData.base64EncodedString(options: .lineLength64Characters)
+        
+        let requestURLString = userURL + "/update-image"
+        guard let requestURL = URL(string: requestURLString) else { return }
+        
+        let parameters: [String: Any] = [
+            "image": strBase64image,
+            "id": id
+        ]
+        
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = "POST"
+        request.httpBody = parameters.percentEncoded()
+                
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else {
+                completion(.failure(.invalidData))
+                return
+            }
+            do {
+                let userUpdateNameResponse = try JSONDecoder().decode(Response.self, from: data)
+                completion(.success(userUpdateNameResponse))
             }
             catch {
                 completion(.failure(.decodingProblem))

@@ -9,7 +9,7 @@ public enum Main: String, StoryboardScreen {
     case main       = "MainViewController"
     
     // Chats
-    case dialogs    = "DialogsViewController"
+    case chats    = "ChatsViewController"
     
     // Profile
     case profile    = "ProfileViewController"

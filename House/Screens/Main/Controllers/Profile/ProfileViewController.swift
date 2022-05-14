@@ -1,4 +1,5 @@
 import UIKit
+import FirebaseAuth
 
 class ProfileViewController: BaseViewController {
 
@@ -53,52 +54,33 @@ class ProfileViewController: BaseViewController {
     }
     
     private func fetchUser() {
-        let userId = State.shared.getUserId()
-        UserNetwork.shared.getUser(id: userId) { result in
-            switch result {
-            case .success(let user):
-                DispatchQueue.main.async {
-                    self.userNameLabel.text = user.name
-                    self.userEmailLabel.text = user.email
-                    guard let imageData = Data(base64Encoded: user.image, options: .ignoreUnknownCharacters) else {
-                        self.userImageView.image = UIImage.Icons.avatar
-                        return
-                    }
-                    self.userImageView.image = UIImage(data: imageData) ?? UIImage.Icons.avatar
-                    
-                    UserCoreDataManager.shared.getUser(id: user.id) { isCompleted, userDB in
-                        if isCompleted {
-                            guard let userDB = userDB else {
-                                return
-                            }
-                            UserCoreDataManager.shared.deleteUser(user: userDB)
-                            UserCoreDataManager.shared.saveUser(id: user.id, name: user.name, email: user.email, image: user.image) { _ in }
-                        }
-                    }
-                    
+        guard let uid = FirebaseAuth.Auth.auth().currentUser?.uid else { return }
+        FirebaseDatabaseManager.shared.getUser(with: uid) { user in
+            guard let user = user else { return }
+            DispatchQueue.main.async {
+                self.userNameLabel.text = user.name
+                self.userEmailLabel.text = user.email
+                guard let imageData = Data(base64Encoded: user.image, options: .ignoreUnknownCharacters) else {
+                    self.userImageView.image = UIImage.Icons.avatar
+                    return
                 }
-            case .failure(let error):
-                print(error)
+                self.userImageView.image = UIImage(data: imageData) ?? UIImage.Icons.avatar
             }
         }
     }
     
     private func fetchLocalUser() {
-        let userId = State.shared.getUserId()
-        UserCoreDataManager.shared.getUser(id: userId) { isCompleted, user in
-            if isCompleted {
-                guard let user = user else {
+        let userUid = State.shared.getUserId()
+        CoreDataManager.shared.getUser(uid: userUid) { user in
+            guard let user = user else { return }
+            DispatchQueue.main.async {
+                self.userNameLabel.text = user.name
+                self.userEmailLabel.text = user.email
+                guard let imageData = Data(base64Encoded: user.image!, options: .ignoreUnknownCharacters) else {
+                    self.userImageView.image = UIImage.Icons.avatar
                     return
                 }
-                DispatchQueue.main.async {
-                    self.userNameLabel.text = user.name
-                    self.userEmailLabel.text = user.email
-                    guard let imageData = Data(base64Encoded: user.image!, options: .ignoreUnknownCharacters) else {
-                        self.userImageView.image = UIImage.Icons.avatar
-                        return
-                    }
-                    self.userImageView.image = UIImage(data: imageData) ?? UIImage.Icons.avatar
-                }
+                self.userImageView.image = UIImage(data: imageData) ?? UIImage.Icons.avatar
             }
         }
     }

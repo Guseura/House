@@ -39,17 +39,10 @@ class EditImageViewController: BaseViewController {
     }
     
     private func fetchData() {
-        UserCoreDataManager.shared.getUser(id: State.shared.getUserId()) { isFounded, user in
-            if isFounded {
-                guard let user = user else {
-                    return
-                }
-                guard let imageData = Data(base64Encoded: user.image!, options: .ignoreUnknownCharacters) else {
-                    self.userImage.image = UIImage.Icons.avatar
-                    return
-                }
-                self.userImage.image = UIImage(data: imageData) ?? UIImage.Icons.avatar
-            }
+        CoreDataManager.shared.getUser(uid: State.shared.getUserId()) { user in
+            guard let user = user else { return }
+            guard let imageData = Data(base64Encoded: user.image!, options: .ignoreUnknownCharacters) else { return }
+            self.userImage.image = UIImage(data: imageData) ?? UIImage.Icons.avatar
         }
     }
     
@@ -65,14 +58,22 @@ class EditImageViewController: BaseViewController {
             return
         }
         
-        UserNetwork.shared.updateUser(image: image, id: State.shared.getUserId()) { result in
-            switch result {
-            case .success(_):
+        FirebaseDatabaseManager.shared.updateUser(image: image) { isSuccess in
+            if isSuccess {
                 self.navigationController?.popViewController(animated: true)
-            case .failure(let error):
-                print(error)
+            } else {
+                
             }
         }
+        
+//        UserNetwork.shared.updateUser(image: image, id: State.shared.getUserEmail()) { result in
+//            switch result {
+//            case .success(_):
+//                self.navigationController?.popViewController(animated: true)
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
     }
     
     

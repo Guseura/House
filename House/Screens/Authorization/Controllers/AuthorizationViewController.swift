@@ -1,4 +1,5 @@
 import UIKit
+import FirebaseAuth
 
 class AuthorizationViewController: BaseViewController {
 
@@ -82,37 +83,24 @@ class AuthorizationViewController: BaseViewController {
     
     // MARK: - @IBActions
     
-    
     @IBAction func authorizationButtonPressed(_ sender: Any) {
         
-        guard let email = emailTextField.text else {
-            return
-        }
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
         
-        guard let password = passwordTextField.text else {
-            return
-        }
-        
-        UserNetwork.shared.getUser(email: email, password: password) { result in
+        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            guard authResult != nil, error == nil else {
+                self.showDefaultAlert(title: "Not found", message: "There is no user with such email and password, please check your data and try again.")
+                return
+            }
             
-            switch result {
-            
-            case .success(let user):
-                DispatchQueue.main.async {
-                    UserCoreDataManager.shared.saveUser(id: user.id, name: user.name, email: user.email, image: "image") { _ in
-                        DispatchQueue.main.async {
-                            State.shared.setIsLoggedIn(to: true)
-                            State.shared.setUserId(to: user.id)
-                            let mainTabBarController = UITabBarController.load(from: Main.tabBar)
-                            mainTabBarController.modalPresentationStyle = .fullScreen
-                            self.present(mainTabBarController, animated: true, completion: nil)
-                        }
-                    }
-                }
-                
-            case .failure(_):
-                DispatchQueue.main.async {
-                    self.showDefaultAlert(title: "Not found", message: "Check that your email and password have been entered correctly and try again")
+            guard let uid = FirebaseAuth.Auth.auth().currentUser?.uid else { return }
+            FirebaseDatabaseManager.shared.getUser(with: uid) { user in
+                guard let user = user else { return }
+                CoreDataManager.shared.saveUser(uid: uid, name: user.name, email: user.email, image: user.image) { _ in
+                    State.shared.setIsLoggedIn(to: true)
+                    State.shared.setUserId(to: uid)
+                    self.dismiss(animated: true, completion: nil)
                 }
             }
         }

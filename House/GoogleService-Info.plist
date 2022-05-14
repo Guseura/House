@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>903298510968-kci0vj5ane5tchmtv10o95ld7c8omk2f.apps.googleusercontent.com</string>
+	<string>774450215009-tm2vl36a1g3nvctkeq749vj13gbh6jbg.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.903298510968-kci0vj5ane5tchmtv10o95ld7c8omk2f</string>
+	<string>com.googleusercontent.apps.774450215009-tm2vl36a1g3nvctkeq749vj13gbh6jbg</string>
 	<key>API_KEY</key>
-	<string>AIzaSyA84IH4L7AnzKjnZPu5wwkN6xsM_9HR5oA</string>
+	<string>AIzaSyBP4jOxqQ5I8mAZLQdMlosZDqUTa6bo5B0</string>
 	<key>GCM_SENDER_ID</key>
-	<string>903298510968</string>
+	<string>774450215009</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.ua.guseura.House</string>
 	<key>PROJECT_ID</key>
-	<string>house-20523</string>
+	<string>house-59e2e</string>
 	<key>STORAGE_BUCKET</key>
-	<string>house-20523.appspot.com</string>
+	<string>house-59e2e.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:903298510968:ios:218fffdeda0f57bfe07d8d</string>
+	<string>1:774450215009:ios:784456f7b7fa4bdbef5220</string>
 </dict>
 </plist>

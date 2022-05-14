@@ -48,9 +48,7 @@ class OnboardingViewController: BaseViewController {
             collectionView.scrollToItem(at: IndexPath(item: pageControl.currentPage + 1, section: 0), at: .centeredVertically, animated: true)
             pageControl.currentPage += 1
         } else {
-            let authorizationNavViewController = UINavigationController.load(from: Authorization.authNavigation)
-            authorizationNavViewController.modalPresentationStyle = .fullScreen
-            self.present(authorizationNavViewController, animated: true, completion: nil)
+            self.dismiss(animated: false, completion: nil)
         }
     }
 

@@ -1,4 +1,5 @@
 import UIKit
+import FirebaseAuth
 
 class RegistrationViewController: BaseViewController {
 
@@ -96,7 +97,7 @@ class RegistrationViewController: BaseViewController {
             if nameTextField.canBecomeFirstResponder {
                 nameTextField.becomeFirstResponder()
             }
-            showDefaultAlert(title: "Name is incorrect", message: "Make sure you have entered the name.")
+            showDefaultAlert(title: "Incorrect name", message: "Looks like you didn`t enter your name, please enter your name and try again.")
             return
         }
         
@@ -104,7 +105,7 @@ class RegistrationViewController: BaseViewController {
             if emailTextField.canBecomeFirstResponder {
                 emailTextField.becomeFirstResponder()
             }
-            showDefaultAlert(title: "Email is incorrect", message: "Make sure you have entered the correct email.")
+            showDefaultAlert(title: "Incorrect email", message: "Looks like email has incorrect format, please check it and try again.")
             return
         }
         
@@ -112,40 +113,28 @@ class RegistrationViewController: BaseViewController {
             if passwordTextField.canBecomeFirstResponder {
                 passwordTextField.becomeFirstResponder()
             }
-            showDefaultAlert(title: "Password is incorrect", message: "Make sure that the password does not contain forbidden characters and is longer than 7 characters")
+            showDefaultAlert(title: "Incorrect password", message: "Looks like password contain forbidden characters or it isn`t longer than 7 characters")
             return
         }
-        
-        // Request
-        
-        UserNetwork.shared.addUser(name: name, email: email, password: password, image: "image") { userCreationResult in
             
-            switch userCreationResult {
-            case .success(let response):
-                if response.status == true {
-                    guard let id = response.id else { return }
-                    DispatchQueue.main.async {
-                        UserCoreDataManager.shared.saveUser(id: id, name: name, email: email, image: "image") { _ in
-                            DispatchQueue.main.async {
-                                State.shared.setIsLoggedIn(to: true)
-                                State.shared.setUserId(to: id)
-                                let mainTabBarController = UITabBarController.load(from: Main.tabBar)
-                                mainTabBarController.modalPresentationStyle = .fullScreen
-                                self.present(mainTabBarController, animated: true, completion: nil)
-                            }
-                        }
-                    }
-                    
-                } else {
-                    DispatchQueue.main.async {
-                        self.showDefaultAlert(title: "Already registered", message: response.message)
-                    }
-                }
-                
-            case .failure(let error):
-                print(error)
+        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            
+            guard error == nil else {
+                self.showDefaultAlert(title: "User exists", message: "Looks like user account with this email already exist.")
+                return
+            }
+            
+            let uid = FirebaseAuth.Auth.auth().currentUser?.uid ?? ""
+            let user = User(uid: uid, name: name, email: email, image: "")
+            FirebaseDatabaseManager.shared.insertUser(with: user)
+            
+            CoreDataManager.shared.saveUser(uid: uid, name: name, email: email, image: "") { isSaved in
+                State.shared.setIsLoggedIn(to: true)
+                State.shared.setUserId(to: uid)
+                self.dismiss(animated: true, completion: nil)
             }
         }
+        
     }
     
     

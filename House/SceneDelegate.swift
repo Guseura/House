@@ -17,12 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        if State.shared.isNotFirstLaunch() {
-            window.rootViewController = State.shared.isLoggedIn() ? UITabBarController.load(from: Main.tabBar) : UINavigationController.load(from: Authorization.authNavigation)
-        } else {
-            State.shared.setIsNotFirstLaunch()
-            window.rootViewController = OnboardingViewController.load(from: Authorization.onboarding)
-        }
+        let loadingViewController = LoadingViewController.load(from: Authorization.loading)
+        window.rootViewController = loadingViewController
         
         self.window = window
         window.makeKeyAndVisible()

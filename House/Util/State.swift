@@ -9,6 +9,8 @@ class State {
     
     // MARK: - Functions
     
+    // Language
+    
     public func getLanguageCode() -> Language.Code {
         let code = userDefaults.string(forKey: UDKeys.language) ?? "en"
         return Language.Code.init(code)
@@ -18,6 +20,8 @@ class State {
         userDefaults.set(languageCode.rawValue, forKey: UDKeys.language)
     }
     
+    // Is first launch
+    
     public func isNotFirstLaunch() -> Bool {
         return userDefaults.bool(forKey: UDKeys.isFirstLaunch)
     }
@@ -25,6 +29,8 @@ class State {
     public func setIsNotFirstLaunch() {
         userDefaults.set(true, forKey: UDKeys.isFirstLaunch)
     }
+    
+    // Is logged in
     
     public func isLoggedIn() -> Bool {
         return userDefaults.bool(forKey: UDKeys.isLoggedIn)
@@ -35,15 +41,14 @@ class State {
         userDefaults.set(isLogged, forKey: UDKeys.isLoggedIn)
     }
     
-    public func setUserId(to id: Int) {
+    // User id
+    
+    public func setUserId(to id: String) {
         userDefaults.setValue(id, forKey: UDKeys.userId)
     }
     
-    public func getUserId() -> Int {
-        if isLoggedIn() {
-            return userDefaults.integer(forKey: UDKeys.userId)
-        }
-        return -1
+    public func getUserId() -> String {
+        return userDefaults.string(forKey: UDKeys.userId) ?? ""
     }
     
     

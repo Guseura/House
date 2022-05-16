@@ -1,6 +1,26 @@
 import UIKit
 import SystemConfiguration
 
+public func readLocalJSONFile(forName name: String) -> Data? {
+    do {
+        if let filePath = Bundle.main.path(forResource: name, ofType: "json") {
+            let fileUrl = URL(fileURLWithPath: filePath)
+            let data = try Data(contentsOf: fileUrl)
+            return data
+        }
+    } catch {
+        print("error: \(error)")
+    }
+    return nil
+}
+
+public func localized(_ key: String) -> String {
+    let path = Bundle.main.path(forResource: State.shared.getLanguageCode().rawValue, ofType: "lproj")
+    let bundle = Bundle(path: path!) ?? Bundle.main
+    let format = bundle.localizedString(forKey: key, value: nil, table: nil)
+    return String(format: format)
+}
+
 public func getAlert(title: String?, message: String? = nil, actions: UIAlertAction...) -> UIAlertController {
     
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -36,13 +56,6 @@ public func isConnectedToNetwork() -> Bool {
     
     return isConnected
     
-}
-
-public func localized(_ key: String) -> String {
-    let path = Bundle.main.path(forResource: State.shared.getLanguageCode().rawValue, ofType: "lproj")
-    let bundle = Bundle(path: path!) ?? Bundle.main
-    let format = bundle.localizedString(forKey: key, value: nil, table: nil)
-    return String(format: format)
 }
 
 

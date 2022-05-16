@@ -65,15 +65,6 @@ class EditImageViewController: BaseViewController {
                 
             }
         }
-        
-//        UserNetwork.shared.updateUser(image: image, id: State.shared.getUserEmail()) { result in
-//            switch result {
-//            case .success(_):
-//                self.navigationController?.popViewController(animated: true)
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
     }
     
     
@@ -95,7 +86,7 @@ extension EditImageViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             ImagePickerManager.shared.pickImage(self) { image in
                 DispatchQueue.main.async {
-                    self.userImage.image = image
+                    self.userImage.image = image.resized(toWidth: 150)
                 }
             }
         } else {

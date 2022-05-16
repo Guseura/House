@@ -44,6 +44,7 @@ class ProfileViewController: BaseViewController {
         otherTableViewHeightConstraint.constant = otherTableView.contentHeight
     }
     
+    
     // MARK: - Custom functions
     
     override func configureUI() {
@@ -60,6 +61,7 @@ class ProfileViewController: BaseViewController {
             DispatchQueue.main.async {
                 self.userNameLabel.text = user.name
                 self.userEmailLabel.text = user.email
+                CoreDataManager.shared.updateUser(uid: uid, name: user.name, image: user.image)
                 guard let imageData = Data(base64Encoded: user.image, options: .ignoreUnknownCharacters) else {
                     self.userImageView.image = UIImage.Icons.avatar
                     return
@@ -70,8 +72,8 @@ class ProfileViewController: BaseViewController {
     }
     
     private func fetchLocalUser() {
-        let userUid = State.shared.getUserId()
-        CoreDataManager.shared.getUser(uid: userUid) { user in
+        let uid = State.shared.getUserId()
+        CoreDataManager.shared.getUser(uid: uid) { user in
             guard let user = user else { return }
             DispatchQueue.main.async {
                 self.userNameLabel.text = user.name
@@ -86,6 +88,8 @@ class ProfileViewController: BaseViewController {
     }
     
 }
+
+// MARK: - Extensions
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     

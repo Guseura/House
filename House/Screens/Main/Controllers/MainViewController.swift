@@ -18,11 +18,6 @@ class MainViewController: BaseViewController {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        configureUI()
-        setupGestures()
-    }
-    
     // MARK: - Custom functions
     
     override func configureUI() {

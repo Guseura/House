@@ -2,7 +2,7 @@ import UIKit
 
 public enum Popup: String, StoryboardScreen {
     
-    case testPopup          = "TestPopup"
+    case groupPopup = "GroupPopup"
     
 }
 

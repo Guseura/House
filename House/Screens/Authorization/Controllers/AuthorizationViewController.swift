@@ -97,7 +97,7 @@ class AuthorizationViewController: BaseViewController {
             guard let uid = FirebaseAuth.Auth.auth().currentUser?.uid else { return }
             FirebaseDatabaseManager.shared.getUser(with: uid) { user in
                 guard let user = user else { return }
-                CoreDataManager.shared.saveUser(uid: uid, name: user.name, email: user.email, image: user.image) { _ in
+                CoreDataManager.shared.saveUser(uid: uid, name: user.name, email: user.email, image: user.image, memberOf: user.memberOf) { _ in
                     State.shared.setIsLoggedIn(to: true)
                     State.shared.setUserId(to: uid)
                     self.dismiss(animated: true, completion: nil)

@@ -9,7 +9,7 @@ class CoreDataManager {
     
     private init() {}
     
-    func saveUser(uid: String, name: String, email: String, image: String, completion: (_ finished: Bool) -> ()) {
+    func saveUser(uid: String, name: String, email: String, image: String, memberOf: String, completion: (_ finished: Bool) -> ()) {
         
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
         
@@ -18,15 +18,59 @@ class CoreDataManager {
         userDB.name = name
         userDB.email = email
         userDB.image = image
+        userDB.memberOf = memberOf
         
         do {
             try managedContext.save()
-            print("CORE DATA: - User saved to the database!")
             completion(true)
         } catch {
-            print("CORE DATA: - Failed to save data: ", error.localizedDescription)
             completion(false)
         }
+    }
+    
+    func updateUser(uid: String, memberOf: String) {
+        
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        
+        let request: NSFetchRequest<UserDB>
+        request = UserDB.fetchRequest()
+        
+        do {
+            let users = try managedContext.fetch(request)
+            for user in users {
+                if user.uid == uid {
+                    user.memberOf = memberOf
+                    do {
+                        try managedContext.save()
+                        return
+                    } catch { }
+                }
+            }
+        } catch { }
+        
+    }
+    
+    func updateUser(uid: String, name: String, image: String) {
+        
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        
+        let request: NSFetchRequest<UserDB>
+        request = UserDB.fetchRequest()
+        
+        do {
+            let users = try managedContext.fetch(request)
+            for user in users {
+                if user.uid == uid {
+                    user.name = name
+                    user.image = image
+                    do {
+                        try managedContext.save()
+                        return
+                    } catch { }
+                }
+            }
+        } catch { }
+        
     }
     
     func getUser(uid: String, completion: (_ user: UserDB?) -> ()) {
@@ -44,10 +88,8 @@ class CoreDataManager {
                     return
                 }
             }
-            print("CORE DATA: - User was not found")
             completion(nil)
         } catch {
-            print("CORE DATA: - Unable to fetch data: ", error.localizedDescription)
             completion(nil)
         }
         
@@ -59,10 +101,7 @@ class CoreDataManager {
         managedContext.delete(user)
         do {
             try managedContext.save()
-            print("CORE DATA: - User deleted")
-        } catch {
-            print("CORE DATA: - Failed to delete data: ", error.localizedDescription)
-        }
+        } catch { }
     }
 
     func getUsers(completion: (_ complete: Bool, _ users: [UserDB]?) -> ()) {
@@ -73,10 +112,8 @@ class CoreDataManager {
         
         do {
             let users = try managedContext.fetch(request)
-            print("CORE DATA: - Users fetched, no issue")
             completion(true, users)
         } catch {
-            print("CORE DATA: - Unable to fetch data: ", error.localizedDescription)
             completion(false, nil)
         }
     }

@@ -10,6 +10,7 @@ public enum Main: String, StoryboardScreen {
     
     // Chats
     case chats      = "ChatsViewController"
+    case chat       = "ChatViewController"
     case search     = "SearchViewController"
     case create     = "CreateGroupViewController"
     case city       = "CityViewController"

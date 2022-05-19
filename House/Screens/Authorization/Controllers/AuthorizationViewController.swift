@@ -60,7 +60,7 @@ class AuthorizationViewController: BaseViewController {
     }
     
     // MARK: - @objc functions
-    
+     
     @objc func keyboardWillShow(_ notification: Notification) {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             DispatchQueue.main.async {

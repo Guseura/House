@@ -61,12 +61,8 @@ class ProfileViewController: BaseViewController {
             DispatchQueue.main.async {
                 self.userNameLabel.text = user.name
                 self.userEmailLabel.text = user.email
+                self.userImageView.image = user.image
                 CoreDataManager.shared.updateUser(uid: uid, name: user.name, image: user.image)
-                guard let imageData = Data(base64Encoded: user.image, options: .ignoreUnknownCharacters) else {
-                    self.userImageView.image = UIImage.Icons.avatar
-                    return
-                }
-                self.userImageView.image = UIImage(data: imageData) ?? UIImage.Icons.avatar
             }
         }
     }

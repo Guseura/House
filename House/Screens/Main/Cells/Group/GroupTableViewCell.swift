@@ -11,6 +11,12 @@ class GroupTableViewCell: UITableViewCell {
     // Image Views
     @IBOutlet weak var chatImageView: UIImageView!
     
+    
+    // MARK: - Variables
+    
+    var user: User?
+    
+    
     // MARK: - Awake functions
     
     override func awakeFromNib() {

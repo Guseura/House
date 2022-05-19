@@ -61,6 +61,10 @@ class ChatsViewController: BaseViewController {
         tableView.roundCorners(radius: 10)
     }
     
+    override func setupGestures() {
+        mainChatBackgroundView.addTapGesture(target: self, action: #selector(groupChatTapped))
+    }
+    
     private func fetchData() {
         let uid = State.shared.getUserId()
         FirebaseDatabaseManager.shared.getUser(with: uid) { user in
@@ -72,7 +76,7 @@ class ChatsViewController: BaseViewController {
                     guard let group = group else { return }
                     self.group = group
                     self.mainChatTitleLabel.text = group.city + " " + group.street
-                    self.mainChatSubtitleLabel.text = "No messages yet"
+                    self.mainChatSubtitleLabel.text = group.lastMessage == "" ? "No messages yet" : group.lastMessage
                 }
             }
         }
@@ -89,7 +93,6 @@ class ChatsViewController: BaseViewController {
     private func configureChats(isMemberEmpty: Bool) {
         DispatchQueue.main.async {
             self.scrollView.isHidden = isMemberEmpty
-            self.navigationController?.setNavigationBarHidden(isMemberEmpty, animated: false)
             self.noChatsImage.isHidden = !isMemberEmpty
             self.noChatsLabel.isHidden = !isMemberEmpty
             self.noChatsDescriptionLabel.isHidden = !isMemberEmpty
@@ -99,12 +102,22 @@ class ChatsViewController: BaseViewController {
     
     private func hideAll() {
         self.scrollView.isHidden = true
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.noChatsImage.isHidden = true
         self.noChatsLabel.isHidden = true
         self.noChatsDescriptionLabel.isHidden = true
         self.searchChatButton.isHidden = true
     }
+    
+    // MARK: - Gesture actions
+    
+    @objc func groupChatTapped() {
+        guard let group = group else { return }
+        let chatViewController = ChatViewController.load(from: Main.chat)
+        chatViewController.type = .group
+        chatViewController.group = group
+        self.navigationController?.pushViewController(chatViewController, animated: true)
+    }
+    
     
     // MARK: - @IBActions
     
@@ -129,15 +142,29 @@ extension ChatsViewController: UITableViewDelegate, UITableViewDataSource {
         
         FirebaseDatabaseManager.shared.getUser(with: group.users[indexPath.row]) { user in
             guard let user = user else { return }
-            cell.titleLabel.text = user.name
-            guard let imageData = Data(base64Encoded: user.image, options: .ignoreUnknownCharacters) else {
-                cell.chatImageView.image = UIImage.Icons.avatar
-                return
+            DispatchQueue.main.async {
+                cell.titleLabel.text = user.name
+                cell.user = user
+                cell.chatImageView.image = user.image
             }
-            cell.chatImageView.image = UIImage(data: imageData) ?? UIImage.Icons.avatar
-            return
+            FirebaseDatabaseManager.shared.getLastMessage(uid: user.uid) { message in
+                DispatchQueue.main.async {
+                    cell.subtitleLabel.text = message
+                    return
+                }
+            }
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath) as! GroupTableViewCell
+        let chatViewController = ChatViewController.load(from: Main.chat)
+        chatViewController.type = .user
+        chatViewController.user = cell.user
+        self.navigationController?.pushViewController(chatViewController, animated: true)
+        
     }
     
 }

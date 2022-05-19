@@ -125,10 +125,10 @@ class RegistrationViewController: BaseViewController {
             }
             
             let uid = FirebaseAuth.Auth.auth().currentUser?.uid ?? ""
-            let user = User(uid: uid, name: name, email: email, image: "", memberOf: "")
+            let user = User(uid: uid, name: name, email: email, image: UIImage.Icons.avatar, memberOf: "")
             FirebaseDatabaseManager.shared.insertUser(with: user)
             
-            CoreDataManager.shared.saveUser(uid: uid, name: name, email: email, image: "", memberOf: "") { isSaved in
+            CoreDataManager.shared.saveUser(uid: uid, name: name, email: email, image: UIImage.Icons.avatar, memberOf: "") { isSaved in
                 State.shared.setIsLoggedIn(to: true)
                 State.shared.setUserId(to: uid)
                 self.dismiss(animated: true, completion: nil)

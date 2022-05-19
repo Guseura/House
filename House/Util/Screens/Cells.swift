@@ -7,6 +7,8 @@ public enum Cell: String {
     case languageCell   = "LanguageTableViewCell"
     case searchCell     = "SearchTableViewCell"
     case groupCell      = "GroupTableViewCell"
+    case incoming       = "IncomingMessageTableViewCell"
+    case outgoing       = "OutgoingMessageTableViewCell"
     
 }
 

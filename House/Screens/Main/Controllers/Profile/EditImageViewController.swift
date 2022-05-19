@@ -19,6 +19,7 @@ class EditImageViewController: BaseViewController {
     // Constraints
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     
+    
     // MARK: - Awake functions
     
     override func viewDidLoad() {
@@ -41,8 +42,8 @@ class EditImageViewController: BaseViewController {
     private func fetchData() {
         CoreDataManager.shared.getUser(uid: State.shared.getUserId()) { user in
             guard let user = user else { return }
-            guard let imageData = Data(base64Encoded: user.image!, options: .ignoreUnknownCharacters) else { return }
-            self.userImage.image = UIImage(data: imageData) ?? UIImage.Icons.avatar
+            guard let image = UIImage(data: user.image!) else { return }
+            self.userImage.image = image 
         }
     }
     
@@ -61,8 +62,6 @@ class EditImageViewController: BaseViewController {
         FirebaseDatabaseManager.shared.updateUser(image: image) { isSuccess in
             if isSuccess {
                 self.navigationController?.popViewController(animated: true)
-            } else {
-                
             }
         }
     }

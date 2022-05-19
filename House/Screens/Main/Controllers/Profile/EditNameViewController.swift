@@ -41,12 +41,16 @@ class EditNameViewController: BaseViewController {
         }
     
         FirebaseDatabaseManager.shared.updateUser(name: name) { isSuccess in
-            if isSuccess {
-                self.showDefaultAlert(title: "Username changed", message: "Your name has been successfully changed")
+            DispatchQueue.main.async {
+                if isSuccess {
+                    if self.nameTextField.isFirstResponder {
+                        self.nameTextField.resignFirstResponder()
+                    }
+                    self.navigationController?.popViewController(animated: true)
+                }
             }
         }
     }
-    
     
     @IBAction func backButtonPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

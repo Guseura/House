@@ -9,15 +9,17 @@ class CoreDataManager {
     
     private init() {}
     
-    func saveUser(uid: String, name: String, email: String, image: String, memberOf: String, completion: (_ finished: Bool) -> ()) {
+    func saveUser(uid: String, name: String, email: String, image: UIImage, memberOf: String, completion: (_ finished: Bool) -> ()) {
         
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        
+        let imageData = image.pngData()
         
         let userDB = UserDB(context: managedContext)
         userDB.uid = uid
         userDB.name = name
         userDB.email = email
-        userDB.image = image
+        userDB.image = imageData
         userDB.memberOf = memberOf
         
         do {
@@ -50,7 +52,7 @@ class CoreDataManager {
         
     }
     
-    func updateUser(uid: String, name: String, image: String) {
+    func updateUser(uid: String, name: String, image: UIImage) {
         
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
         
@@ -59,10 +61,11 @@ class CoreDataManager {
         
         do {
             let users = try managedContext.fetch(request)
+            let imageData = image.pngData()
             for user in users {
                 if user.uid == uid {
                     user.name = name
-                    user.image = image
+                    user.image = imageData
                     do {
                         try managedContext.save()
                         return

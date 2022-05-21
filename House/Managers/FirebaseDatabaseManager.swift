@@ -1,11 +1,14 @@
 import UIKit
 import FirebaseDatabase
+import FirebaseStorage
+
 
 final class FirebaseDatabaseManager {
     
     static let shared = FirebaseDatabaseManager()
     
     private let database = Database.database(url: "https://house-59e2e-default-rtdb.europe-west1.firebasedatabase.app").reference()
+    private let storage = Storage.storage(url: "gs://house-59e2e.appspot.com")
     
 }
 
@@ -83,6 +86,9 @@ extension FirebaseDatabaseManager {
     
     
 }
+
+
+// MARK: - Group management
 
 extension FirebaseDatabaseManager {
     
@@ -182,6 +188,8 @@ extension FirebaseDatabaseManager {
     
     
 }
+
+// MARK: - Message management
 
 extension FirebaseDatabaseManager {
     
@@ -362,6 +370,133 @@ extension FirebaseDatabaseManager {
         return first > second ? [second, first] : [first, second]
     }
     
+}
+
+// MARK: - Post management
+
+extension FirebaseDatabaseManager {
+    
+    public func addPost(groupName: String, image: UIImage, titleText: String, subtitleText: String, completion: @escaping (Bool) -> Void) {
+        
+        uploadMedia(image: image) { url in
+            
+            let dataPost: [String: Any] = [
+                "image": url,
+                "title_text": titleText,
+                "subtitle_text": subtitleText
+            ]
+            
+            let ref = self.database.child("groups").child(groupName)
+            ref.observeSingleEvent(of: .value) { dataSnapshot in
+                guard let data = dataSnapshot.value as? NSDictionary else {
+                    let value: [Any] = [dataPost]
+                    self.database.child("groups").child(groupName).child("posts").setValue(value) { error, _ in
+                        guard error == nil else {
+                            completion(false)
+                            return
+                        }
+                        completion(true)
+                    }
+                    return
+                }
+                
+                var posts = data["posts"] as? [[String: Any]] ?? []
+                posts.append(dataPost)
+                
+                self.database.child("groups").child(groupName).updateChildValues(["posts": posts]) { error, _ in
+                    if error == nil {
+                        completion(true)
+                        return
+                    }
+                    completion(false)
+                    return
+                }
+            }
+        }
+    }
+    
+    public func addPost(groupName: String, titleText: String, subtitleText: String, completion: @escaping (Bool) -> Void) {
+        
+        let dataPost: [String: Any] = [
+            "image": "",
+            "title_text": titleText,
+            "subtitle_text": subtitleText
+        ]
+        
+        let ref = self.database.child("groups").child(groupName)
+        ref.observeSingleEvent(of: .value) { dataSnapshot in
+            guard let data = dataSnapshot.value as? NSDictionary else {
+                let value: [Any] = [dataPost]
+                self.database.child("groups").child(groupName).child("posts").setValue(value) { error, _ in
+                    guard error == nil else {
+                        completion(false)
+                        return
+                    }
+                    completion(true)
+                }
+                return
+            }
+            
+            var posts = data["posts"] as? [[String: Any]] ?? []
+            posts.append(dataPost)
+            
+            self.database.child("groups").child(groupName).updateChildValues(["posts": posts]) { error, _ in
+                if error == nil {
+                    completion(true)
+                    return
+                }
+                completion(false)
+                return
+            }
+        }
+    }
+    
+    public func getPosts(groupName: String, completion: @escaping ([Post]?) -> Void) {
+        
+        database.child("groups").child(groupName).observe(.value) { dataSnapshot in
+            
+            guard let data = dataSnapshot.value as? NSDictionary else {
+                completion(nil)
+                return
+            }
+            
+            var allPosts: [Post] = []
+            
+            guard let postsData = data["posts"] else { return }
+            guard let posts = postsData as? [NSDictionary] else { return }
+            
+            for post in posts {
+                
+                let image = post["image"] as? String ?? ""
+                let titleText = post["title_text"] as? String ?? ""
+                let subtitleText = post["subtitle_text"] as? String ?? ""
+                
+                allPosts.append(Post(image: image, titleText: titleText, subtitleText: subtitleText))
+            }
+            completion(allPosts)
+            
+        }
+        
+    }
+    
+    private func uploadMedia(image: UIImage, completion: @escaping (_ url: String) -> Void) {
+        
+        let storageRef = Storage.storage().reference().child("image.png")
+        if let uploadData = image.jpegData(compressionQuality: 0.5) {
+            storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
+                if error != nil {
+                    print("error")
+                    completion("")
+                } else {
+                    storageRef.downloadURL(completion: { (url, error) in
+                        print(url?.absoluteString)
+                        completion(url?.absoluteString ?? "")
+                    })
+                }
+            }
+        }
+    }
+
 }
 
 extension Date {

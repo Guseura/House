@@ -8,6 +8,7 @@ class ChatsViewController: BaseViewController {
     @IBOutlet weak var mainChatBackgroundView: UIView!
     
     // Labels
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var mainChatTitleLabel: UILabel!
     @IBOutlet weak var mainChatSubtitleLabel: UILabel!
     @IBOutlet weak var noChatsLabel: UILabel!

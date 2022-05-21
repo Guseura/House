@@ -27,6 +27,10 @@ class SearchTableViewCell: UITableViewCell {
     public func cornerBottomCorners() {
         contentView.roundCorners(radius: 10, corners: .bottomLeft, .bottomRight)
     }
+    
+    public func cornerAllCorners() {
+        contentView.roundCorners(radius: 10)
+    }
 
     
 }

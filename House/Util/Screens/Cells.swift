@@ -9,6 +9,7 @@ public enum Cell: String {
     case groupCell      = "GroupTableViewCell"
     case incoming       = "IncomingMessageTableViewCell"
     case outgoing       = "OutgoingMessageTableViewCell"
+    case post           = "PostTableViewCell"
     
 }
 

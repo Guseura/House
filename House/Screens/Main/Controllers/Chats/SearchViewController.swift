@@ -94,6 +94,10 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             cell.cornerTopCorners()
         }
         
+        if toShow.count == 1 {
+            cell.cornerAllCorners()
+        }
+        
         return cell
     }
     

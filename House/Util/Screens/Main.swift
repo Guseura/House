@@ -7,6 +7,7 @@ public enum Main: String, StoryboardScreen {
     
     // Main
     case main       = "MainViewController"
+    case newPost    = "NewPostViewController"
     
     // Chats
     case chats      = "ChatsViewController"

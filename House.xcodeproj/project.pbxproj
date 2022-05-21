@@ -45,6 +45,11 @@
 		4A3659E228328B1D00B6FD5E /* IncomingMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3659E028328B1D00B6FD5E /* IncomingMessageTableViewCell.swift */; };
 		4A3659E328328B1D00B6FD5E /* IncomingMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A3659E128328B1D00B6FD5E /* IncomingMessageTableViewCell.xib */; };
 		4A3659E52832CF0000B6FD5E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3659E42832CEFF00B6FD5E /* Message.swift */; };
+		4A3659E928376AE400B6FD5E /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3659E728376AE300B6FD5E /* PostTableViewCell.swift */; };
+		4A3659EA28376AE400B6FD5E /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A3659E828376AE300B6FD5E /* PostTableViewCell.xib */; };
+		4A3659ED2837761500B6FD5E /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3659EC2837761500B6FD5E /* NewPostViewController.swift */; };
+		4A3659EF283793AA00B6FD5E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3659EE283793AA00B6FD5E /* Post.swift */; };
+		4A3659F12837965600B6FD5E /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3659F02837965600B6FD5E /* UIImageView.swift */; };
 		4A49D29427F2F1BB00805FE5 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A49D29327F2F1BB00805FE5 /* SecondaryButton.swift */; };
 		4A7BD7C227D77919001D73D8 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7BD7C127D77919001D73D8 /* OnboardingViewController.swift */; };
 		4A7BD7C427D8DA0C001D73D8 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7BD7C327D8DA0C001D73D8 /* MainButton.swift */; };
@@ -134,6 +139,11 @@
 		4A3659E028328B1D00B6FD5E /* IncomingMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingMessageTableViewCell.swift; sourceTree = "<group>"; };
 		4A3659E128328B1D00B6FD5E /* IncomingMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomingMessageTableViewCell.xib; sourceTree = "<group>"; };
 		4A3659E42832CEFF00B6FD5E /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		4A3659E728376AE300B6FD5E /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		4A3659E828376AE300B6FD5E /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		4A3659EC2837761500B6FD5E /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		4A3659EE283793AA00B6FD5E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		4A3659F02837965600B6FD5E /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		4A49D29327F2F1BB00805FE5 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		4A7BD7C127D77919001D73D8 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		4A7BD7C327D8DA0C001D73D8 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
@@ -289,6 +299,24 @@
 			path = "Outgoing Message";
 			sourceTree = "<group>";
 		};
+		4A3659E628376ACB00B6FD5E /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				4A3659E728376AE300B6FD5E /* PostTableViewCell.swift */,
+				4A3659E828376AE300B6FD5E /* PostTableViewCell.xib */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		4A3659EB2837706E00B6FD5E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4ADD2A4527CFA146001F143C /* MainViewController.swift */,
+				4A3659EC2837761500B6FD5E /* NewPostViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		4A7BD7C527D8DDA3001D73D8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,6 +423,7 @@
 				4ADD2A6E27D0B90A001F143C /* UIColor.swift */,
 				4ADD2A7027D113FE001F143C /* UIFont.swift */,
 				4ADD2A7227D11416001F143C /* UIImage.swift */,
+				4A3659F02837965600B6FD5E /* UIImageView.swift */,
 				4ADD2A7427D11483001F143C /* UILabel.swift */,
 				4ADD2A7627D114B7001F143C /* UINavigationController.swift */,
 				4ADD2A7827D114D5001F143C /* UITableView.swift */,
@@ -447,6 +476,7 @@
 				4A2F7524282CF3E600F5E9A0 /* Settings.swift */,
 				4A3659CF2830079800B6FD5E /* City.swift */,
 				4A3659E42832CEFF00B6FD5E /* Message.swift */,
+				4A3659EE283793AA00B6FD5E /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -485,9 +515,9 @@
 		4ADD2A8D27D11F80001F143C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4A3659EB2837706E00B6FD5E /* Main */,
 				4A3659B8282FABA100B6FD5E /* Chats */,
 				4A2F751D282C1F1300F5E9A0 /* Profile */,
-				4ADD2A4527CFA146001F143C /* MainViewController.swift */,
 				4A2F750F282A923000F5E9A0 /* TabBarController.swift */,
 			);
 			path = Controllers;
@@ -496,6 +526,7 @@
 		4ADD2A8E27D11F8E001F143C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				4A3659E628376ACB00B6FD5E /* Post */,
 				4A3659DB2832884E00B6FD5E /* Outgoing Message */,
 				4A3659DA2832884300B6FD5E /* Incoming Message */,
 				4A3659D328322DCB00B6FD5E /* Group */,
@@ -630,6 +661,7 @@
 				4A7BD7DD27D8DE2D001D73D8 /* AvenirLTStd-Book.otf in Resources */,
 				4A3659C8282FE43800B6FD5E /* cities-en.json in Resources */,
 				4A3659C1282FB86000B6FD5E /* SearchTableViewCell.xib in Resources */,
+				4A3659EA28376AE400B6FD5E /* PostTableViewCell.xib in Resources */,
 				4ADD2A4B27CFA147001F143C /* Assets.xcassets in Resources */,
 				4A3659C9282FE43800B6FD5E /* cities-uk.json in Resources */,
 				4A3659E328328B1D00B6FD5E /* IncomingMessageTableViewCell.xib in Resources */,
@@ -698,7 +730,9 @@
 				4ADD2AA227D13382001F143C /* AuthorizationViewController.swift in Sources */,
 				4A3659B7282D7EA400B6FD5E /* LoadingViewController.swift in Sources */,
 				4A3659BA282FABB700B6FD5E /* SearchViewController.swift in Sources */,
+				4A3659EF283793AA00B6FD5E /* Post.swift in Sources */,
 				4A7BD7C427D8DA0C001D73D8 /* MainButton.swift in Sources */,
+				4A3659ED2837761500B6FD5E /* NewPostViewController.swift in Sources */,
 				4A2F7517282BE5C200F5E9A0 /* SettingsTableViewCell.swift in Sources */,
 				4A3659D02830079800B6FD5E /* City.swift in Sources */,
 				4ADD2A7D27D11516001F143C /* String.swift in Sources */,
@@ -720,6 +754,7 @@
 				4A3659C3282FC0F800B6FD5E /* Group.swift in Sources */,
 				4A2F7528282D087900F5E9A0 /* ImagePickerManager.swift in Sources */,
 				4A7BD7E027D8E547001D73D8 /* Authorization.swift in Sources */,
+				4A3659F12837965600B6FD5E /* UIImageView.swift in Sources */,
 				4ADD2A6627D0B767001F143C /* Main.swift in Sources */,
 				4ADD2A4627CFA146001F143C /* MainViewController.swift in Sources */,
 				4A3659C0282FB86000B6FD5E /* SearchTableViewCell.swift in Sources */,
@@ -729,6 +764,7 @@
 				4AC2580527D91A8C00F18112 /* Onboarding.swift in Sources */,
 				4ADD2A4427CFA146001F143C /* SceneDelegate.swift in Sources */,
 				4ADD2A8527D1170E001F143C /* User.swift in Sources */,
+				4A3659E928376AE400B6FD5E /* PostTableViewCell.swift in Sources */,
 				4A2F750C282A705200F5E9A0 /* ProfileViewController.swift in Sources */,
 				4A3659B5282D6A2400B6FD5E /* FirebaseDatabaseManager.swift in Sources */,
 				4ADD2A7727D114B7001F143C /* UINavigationController.swift in Sources */,

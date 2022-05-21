@@ -193,15 +193,7 @@ extension FirebaseDatabaseManager {
 
 extension FirebaseDatabaseManager {
     
-    public func sendMessage(groupName: String, userFromId: String, message: String, completion: @escaping (Bool) -> Void) {
-        
-        let dataMessage: [String: Any] = [
-            "message": message,
-            "date": getCurrentDate(),
-            "sender_uid": userFromId,
-            "is_read": false
-        ]
-        
+    private func sendGroupMessage(with dataMessage: [String: Any], groupName: String, message: String, completion: @escaping (Bool) -> Void) {
         let ref = database.child("groups").child(groupName)
         ref.child("last_message").setValue(message)
         ref.observeSingleEvent(of: .value) { dataSnapshot in
@@ -231,6 +223,60 @@ extension FirebaseDatabaseManager {
         }
     }
     
+    public func sendMessage(groupName: String, userFromId: String, image: UIImage, completion: @escaping (Bool) -> Void) {
+        uploadMedia(image: image) { [weak self] url in
+            guard let strongSelf = self else { return }
+            let dataMessage: [String: Any] = [
+                "message": url,
+                "date": strongSelf.getCurrentDate(),
+                "type": "image",
+                "sender_uid": userFromId,
+                "is_read": false
+            ]
+            strongSelf.sendGroupMessage(with: dataMessage, groupName: groupName, message: url) { isCompleted in
+                completion(isCompleted)
+            }
+        }
+    }
+    
+    public func sendMessage(groupName: String, userFromId: String, message: String, completion: @escaping (Bool) -> Void) {
+        
+        let dataMessage: [String: Any] = [
+            "message": message,
+            "date": getCurrentDate(),
+            "type": "text",
+            "sender_uid": userFromId,
+            "is_read": false
+        ]
+        
+        sendGroupMessage(with: dataMessage, groupName: groupName, message: message) { isCompleted in
+            completion(isCompleted)
+        }
+    }
+    
+    public func sendMessage(uid: String, image: UIImage, completion: @escaping (Bool) -> Void) {
+        uploadMedia(image: image) { [weak self] url in
+            guard let strongSelf = self else { return }
+            
+            let userFromId = State.shared.getUserId()
+            let ids = strongSelf.compareStrings(first: uid, second: userFromId)
+            
+            let conversationId = "conversation_\(ids[0])_\(ids[1])"
+            let dataMessage: [String: Any] = [
+                "message": url,
+                "date": strongSelf.getCurrentDate(),
+                "type": "image",
+                "sender_uid": userFromId,
+                "is_read": false
+            ]
+            
+            strongSelf.sendUserMessage(dataMessage: dataMessage, conversationId: conversationId, uid: uid, message: url) { isCompleted in
+                completion(isCompleted)
+            }
+            
+        }
+    }
+    
     public func sendMessage(uid: String, message: String, completion: @escaping (Bool) -> Void) {
         
         let userFromId = State.shared.getUserId()
@@ -240,10 +286,18 @@ extension FirebaseDatabaseManager {
         let dataMessage: [String: Any] = [
             "message": message,
             "date": getCurrentDate(),
+            "type": "text",
             "sender_uid": userFromId,
             "is_read": false
         ]
         
+        sendUserMessage(dataMessage: dataMessage, conversationId: conversationId, uid: uid, message: message) { isCompleted in
+            completion(isCompleted)
+        }
+        
+    }
+    
+    private func sendUserMessage(dataMessage: [String: Any], conversationId: String, uid: String, message: String, completion: @escaping (Bool) -> Void) {
         let ref = database.child(conversationId)
         ref.observeSingleEvent(of: .value) { dataSnapshot in
             guard let data = dataSnapshot.value as? NSDictionary else {
@@ -324,8 +378,9 @@ extension FirebaseDatabaseManager {
                 let senderId = message["sender_uid"] as? String ?? ""
                 let date = message["date"] as? String ?? ""
                 let isRead = message["is_read"] as? Bool ?? false
+                let type = message["type"] as? String ?? "text"
                 
-                allMessages.append(Message(message: textMessage, senderId: senderId, date: date, isRead: isRead))
+                allMessages.append(Message(message: textMessage, senderId: senderId, date: date, isRead: isRead, type: type))
             }
             
             completion(allMessages)
@@ -353,8 +408,9 @@ extension FirebaseDatabaseManager {
                 let senderId = message["sender_uid"] as? String ?? ""
                 let date = message["date"] as? String ?? ""
                 let isRead = message["is_read"] as? Bool ?? false
+                let type = message["type"] as? String ?? "text"
                 
-                allMessages.append(Message(message: textMessage, senderId: senderId, date: date, isRead: isRead))
+                allMessages.append(Message(message: textMessage, senderId: senderId, date: date, isRead: isRead, type: type))
             }
             completion(allMessages)
             
@@ -376,14 +432,14 @@ extension FirebaseDatabaseManager {
 
 extension FirebaseDatabaseManager {
     
-    public func addPost(groupName: String, image: UIImage, titleText: String, subtitleText: String, completion: @escaping (Bool) -> Void) {
+    public func addPost(groupName: String, image: UIImage, description: String, completion: @escaping (Bool) -> Void) {
         
         uploadMedia(image: image) { url in
             
             let dataPost: [String: Any] = [
                 "image": url,
-                "title_text": titleText,
-                "subtitle_text": subtitleText
+                "description": description,
+                "date": self.getCurrentDate()
             ]
             
             let ref = self.database.child("groups").child(groupName)
@@ -415,12 +471,11 @@ extension FirebaseDatabaseManager {
         }
     }
     
-    public func addPost(groupName: String, titleText: String, subtitleText: String, completion: @escaping (Bool) -> Void) {
+    public func addPost(groupName: String, description: String, completion: @escaping (Bool) -> Void) {
         
         let dataPost: [String: Any] = [
-            "image": "",
-            "title_text": titleText,
-            "subtitle_text": subtitleText
+            "description": description,
+            "date": self.getCurrentDate()
         ]
         
         let ref = self.database.child("groups").child(groupName)
@@ -451,6 +506,43 @@ extension FirebaseDatabaseManager {
         }
     }
     
+    public func likePost(groupName: String, index: String, completion: @escaping (Bool) -> Void) {
+        
+        let userId = State.shared.getUserId()
+        
+        database.child("groups").child(groupName).child("posts").child(index).child("liked_by").observeSingleEvent(of: .value) { dataSnapshot in
+            
+            guard let _ = dataSnapshot.value as? NSDictionary else {
+                self.database.child("groups").child(groupName).child("posts").child(index).child("liked_by").setValue([userId: true]) { error, _ in
+                    guard error == nil else {
+                        completion(false)
+                        return
+                    }
+                    completion(true)
+                }
+                return
+            }
+            
+            self.database.child("groups").child(groupName).child("posts").child(index).child("liked_by").child(State.shared.getUserId()).observeSingleEvent(of: .value) { userDataSnaphot in
+                
+                guard let _ = userDataSnaphot.value as? Bool else {
+                    self.database.child("groups").child(groupName).child("posts").child(index).child("liked_by").child(State.shared.getUserId()).setValue(true) { error, _ in
+                        if error != nil {
+                            completion(false)
+                            return
+                        }
+                        completion(true)
+                        return
+                    }
+                    return
+                }
+                
+                self.database.child("groups").child(groupName).child("posts").child(index).child("liked_by").child(State.shared.getUserId()).removeValue()
+            }
+        }
+    }
+    
+    
     public func getPosts(groupName: String, completion: @escaping ([Post]?) -> Void) {
         
         database.child("groups").child(groupName).observe(.value) { dataSnapshot in
@@ -468,10 +560,13 @@ extension FirebaseDatabaseManager {
             for post in posts {
                 
                 let image = post["image"] as? String ?? ""
-                let titleText = post["title_text"] as? String ?? ""
-                let subtitleText = post["subtitle_text"] as? String ?? ""
+                let description = post["description"] as? String ?? ""
+                let date = post["date"] as? String ?? ""
                 
-                allPosts.append(Post(image: image, titleText: titleText, subtitleText: subtitleText))
+                let likedBy = post["liked_by"] as? NSDictionary
+                let likedByUsers: [String] = likedBy?.allKeys as? [String] ?? []
+                
+                allPosts.append(Post(image: image, description: description, date: date, likedBy: likedByUsers))
             }
             completion(allPosts)
             
@@ -481,15 +576,18 @@ extension FirebaseDatabaseManager {
     
     private func uploadMedia(image: UIImage, completion: @escaping (_ url: String) -> Void) {
         
-        let storageRef = Storage.storage().reference().child("image.png")
+        let senderID = State.shared.getUserId()
+        let currentDate = getCurrentDate()
+        
+        let imageName = senderID + " " + currentDate
+        
+        let storageRef = Storage.storage().reference().child("\(imageName).png")
         if let uploadData = image.jpegData(compressionQuality: 0.5) {
             storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
                 if error != nil {
-                    print("error")
                     completion("")
                 } else {
                     storageRef.downloadURL(completion: { (url, error) in
-                        print(url?.absoluteString)
                         completion(url?.absoluteString ?? "")
                     })
                 }

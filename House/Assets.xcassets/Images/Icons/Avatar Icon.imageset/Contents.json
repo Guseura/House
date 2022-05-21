@@ -3,16 +3,6 @@
     {
       "filename" : "Avatar Placeholder Icon.pdf",
       "idiom" : "universal"
-    },
-    {
-      "appearances" : [
-        {
-          "appearance" : "luminosity",
-          "value" : "dark"
-        }
-      ],
-      "filename" : "Avatar Placeholder Black Icon.pdf",
-      "idiom" : "universal"
     }
   ],
   "info" : {

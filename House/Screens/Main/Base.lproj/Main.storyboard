@@ -28,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dtd-YF-htD">
-                                <rect key="frame" x="24" y="76" width="76" height="32"/>
+                                <rect key="frame" x="24" y="76" width="78.5" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="dev-tv-xih"/>
                                 </constraints>
@@ -133,7 +133,7 @@ Try to find your house</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create post" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASd-Ka-glY">
-                                <rect key="frame" x="144.5" y="63.5" width="125.5" height="25.5"/>
+                                <rect key="frame" x="142" y="63.5" width="130.5" height="25.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25.5" id="r38-5o-8el"/>
                                 </constraints>
@@ -157,7 +157,7 @@ Try to find your house</string>
                                 <rect key="frame" x="0.0" y="104" width="414" height="758"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jYo-uG-lYl">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="462"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="401"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="8md-Xj-rzq">
                                                 <rect key="frame" x="24" y="16" width="366" height="200"/>
@@ -165,37 +165,8 @@ Try to find your house</string>
                                                     <constraint firstAttribute="height" constant="200" id="Lsw-gh-ezT"/>
                                                 </constraints>
                                             </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9bW-Cd-T7e">
-                                                <rect key="frame" x="24" y="240" width="366" height="37"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eoY-f3-7Dt">
-                                                        <rect key="frame" x="0.0" y="36" width="366" height="1"/>
-                                                        <color key="backgroundColor" name="TextLightGray"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="1" id="dob-Wa-9Bd"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Pp-Fa-Ius">
-                                                        <rect key="frame" x="0.0" y="0.0" width="366" height="30"/>
-                                                        <color key="textColor" name="TextMainColor"/>
-                                                        <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="18"/>
-                                                        <textInputTraits key="textInputTraits" textContentType="name"/>
-                                                    </textField>
-                                                </subviews>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="eoY-f3-7Dt" secondAttribute="bottom" id="31d-Ka-eeu"/>
-                                                    <constraint firstItem="eoY-f3-7Dt" firstAttribute="leading" secondItem="9bW-Cd-T7e" secondAttribute="leading" id="6iF-L0-qrd"/>
-                                                    <constraint firstItem="eoY-f3-7Dt" firstAttribute="top" secondItem="0Pp-Fa-Ius" secondAttribute="bottom" constant="6" id="EnB-Fa-Iij"/>
-                                                    <constraint firstAttribute="trailing" secondItem="eoY-f3-7Dt" secondAttribute="trailing" id="ZMj-QN-PgM"/>
-                                                    <constraint firstAttribute="height" constant="37" id="tBp-mX-zgl"/>
-                                                    <constraint firstItem="0Pp-Fa-Ius" firstAttribute="leading" secondItem="9bW-Cd-T7e" secondAttribute="leading" id="tW6-q2-BBn"/>
-                                                    <constraint firstAttribute="trailing" secondItem="0Pp-Fa-Ius" secondAttribute="trailing" id="vAZ-X3-9oE"/>
-                                                    <constraint firstItem="0Pp-Fa-Ius" firstAttribute="top" secondItem="9bW-Cd-T7e" secondAttribute="top" id="yzD-oE-uIK"/>
-                                                </constraints>
-                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nm5-Lc-kOM">
-                                                <rect key="frame" x="24" y="301" width="366" height="37"/>
+                                                <rect key="frame" x="24" y="240" width="366" height="37"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sxr-Zy-zdT">
                                                         <rect key="frame" x="0.0" y="36" width="366" height="1"/>
@@ -224,7 +195,7 @@ Try to find your house</string>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8s-gj-wth" customClass="MainButton" customModule="House" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="380" width="366" height="58"/>
+                                                <rect key="frame" x="24" y="319" width="366" height="58"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="58" id="tcq-Ai-mbH"/>
                                                 </constraints>
@@ -237,19 +208,16 @@ Try to find your house</string>
                                         </subviews>
                                         <color key="backgroundColor" name="BackgroundProfileColor"/>
                                         <constraints>
-                                            <constraint firstItem="9bW-Cd-T7e" firstAttribute="top" secondItem="8md-Xj-rzq" secondAttribute="bottom" constant="24" id="6j3-iT-v73"/>
                                             <constraint firstItem="r8s-gj-wth" firstAttribute="leading" secondItem="jYo-uG-lYl" secondAttribute="leading" constant="24" id="GIq-mr-ZUS"/>
                                             <constraint firstAttribute="trailing" secondItem="8md-Xj-rzq" secondAttribute="trailing" constant="24" id="Hs0-Vz-Dps"/>
                                             <constraint firstAttribute="trailing" secondItem="nm5-Lc-kOM" secondAttribute="trailing" constant="24" id="PPX-qO-KWI"/>
                                             <constraint firstItem="8md-Xj-rzq" firstAttribute="leading" secondItem="jYo-uG-lYl" secondAttribute="leading" constant="24" id="ROa-Sb-fof"/>
                                             <constraint firstItem="nm5-Lc-kOM" firstAttribute="leading" secondItem="jYo-uG-lYl" secondAttribute="leading" constant="24" id="UkZ-H4-gfm"/>
-                                            <constraint firstItem="nm5-Lc-kOM" firstAttribute="top" secondItem="9bW-Cd-T7e" secondAttribute="bottom" constant="24" id="a2s-FM-V0k"/>
-                                            <constraint firstItem="9bW-Cd-T7e" firstAttribute="leading" secondItem="jYo-uG-lYl" secondAttribute="leading" constant="24" id="bjj-4A-qHq"/>
+                                            <constraint firstItem="nm5-Lc-kOM" firstAttribute="top" secondItem="8md-Xj-rzq" secondAttribute="bottom" constant="24" id="drW-Wd-Kbn"/>
                                             <constraint firstItem="8md-Xj-rzq" firstAttribute="top" secondItem="jYo-uG-lYl" secondAttribute="top" constant="16" id="eyB-BU-41A"/>
                                             <constraint firstAttribute="bottom" secondItem="r8s-gj-wth" secondAttribute="bottom" constant="24" id="g7o-dc-5ez"/>
                                             <constraint firstItem="r8s-gj-wth" firstAttribute="top" secondItem="nm5-Lc-kOM" secondAttribute="bottom" constant="42" id="rcd-8T-ygR"/>
                                             <constraint firstAttribute="trailing" secondItem="r8s-gj-wth" secondAttribute="trailing" constant="24" id="tCg-sF-yTi"/>
-                                            <constraint firstAttribute="trailing" secondItem="9bW-Cd-T7e" secondAttribute="trailing" constant="24" id="zgS-9d-2Rl"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -284,7 +252,6 @@ Try to find your house</string>
                         <outlet property="descriptionTextField" destination="Ewu-pK-d17" id="dcd-Xz-bV2"/>
                         <outlet property="postImageView" destination="8md-Xj-rzq" id="9SN-Gy-rst"/>
                         <outlet property="titleLabel" destination="ASd-Ka-glY" id="Zeh-bZ-bRg"/>
-                        <outlet property="titleTextField" destination="0Pp-Fa-Ius" id="Jbg-bN-6FG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zBN-wY-s0K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -440,7 +407,7 @@ Try to find your house</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYJ-Lr-ENw">
-                                <rect key="frame" x="24" y="76" width="79" height="32"/>
+                                <rect key="frame" x="24" y="76" width="82" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="Tbp-cT-12l"/>
                                 </constraints>
@@ -508,7 +475,7 @@ Try to find your house</string>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHm-IK-066">
-                                <rect key="frame" x="169.5" y="63.5" width="75.5" height="25.5"/>
+                                <rect key="frame" x="168.5" y="63.5" width="77.5" height="25.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25.5" id="aQL-pa-YuP"/>
                                 </constraints>
@@ -675,7 +642,7 @@ Try to find your house</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create group" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fvw-ZO-g6a">
-                                <rect key="frame" x="137" y="63.5" width="140.5" height="25.5"/>
+                                <rect key="frame" x="133" y="63.5" width="148.5" height="25.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25.5" id="MSG-ZP-8lM"/>
                                 </constraints>
@@ -886,7 +853,7 @@ Try to find your house</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit image" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3x-gA-uSb">
-                                <rect key="frame" x="150" y="63.5" width="114" height="25.5"/>
+                                <rect key="frame" x="148" y="63.5" width="118.5" height="25.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25.5" id="sDB-V0-42z"/>
                                 </constraints>
@@ -972,7 +939,7 @@ Try to find your house</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTG-6h-IoF">
-                                <rect key="frame" x="154" y="63.5" width="106.5" height="25.5"/>
+                                <rect key="frame" x="152.5" y="63.5" width="109.5" height="25.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25.5" id="jtL-Fl-FWc"/>
                                 </constraints>
@@ -1033,7 +1000,7 @@ Try to find your house</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vni-l5-xSu">
-                                <rect key="frame" x="153" y="63.5" width="108.5" height="25.5"/>
+                                <rect key="frame" x="151.5" y="63.5" width="111.5" height="25.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25.5" id="BhZ-Gh-BS5"/>
                                 </constraints>
@@ -1181,7 +1148,7 @@ Try to find your house</string>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fr-X1-VAa">
-                                <rect key="frame" x="186" y="63.5" width="42.5" height="25.5"/>
+                                <rect key="frame" x="183" y="63.5" width="48" height="25.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25.5" id="tc7-j1-w70"/>
                                 </constraints>
@@ -1241,7 +1208,7 @@ Try to find your house</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Street" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ox1-77-Yvt">
-                                <rect key="frame" x="175" y="63.5" width="64.5" height="25.5"/>
+                                <rect key="frame" x="173" y="63.5" width="68.5" height="25.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25.5" id="iZX-Gp-Sms"/>
                                 </constraints>
@@ -1379,7 +1346,7 @@ Try to find your house</string>
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write message..." translatesAutoresizingMaskIntoConstraints="NO" id="dgz-hK-WWt">
-                                <rect key="frame" x="24" y="810" width="322" height="36"/>
+                                <rect key="frame" x="24" y="810" width="278" height="36"/>
                                 <color key="backgroundColor" name="TableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="IpY-K3-1Jh"/>
@@ -1416,16 +1383,32 @@ Try to find your house</string>
                                     <constraint firstAttribute="height" constant="1" id="Zmx-ZW-aW0"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVq-tv-Bss">
+                                <rect key="frame" x="314" y="810" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="DTx-kn-eGP"/>
+                                    <constraint firstAttribute="width" constant="32" id="mzy-eR-Qnw"/>
+                                </constraints>
+                                <color key="tintColor" red="0.1450980392" green="0.3294117647" blue="0.79215686269999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="paperclip" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="clipButtonPressed:" destination="I46-Wc-XC7" eventType="touchUpInside" id="BWH-Ij-Fg9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kAZ-96-b3Z"/>
                         <color key="backgroundColor" name="BackgroundProfileColor"/>
                         <constraints>
-                            <constraint firstItem="ggs-uN-8G7" firstAttribute="leading" secondItem="dgz-hK-WWt" secondAttribute="trailing" constant="12" id="0lV-u0-wSD"/>
                             <constraint firstItem="aC2-qw-Lpf" firstAttribute="centerY" secondItem="vd3-Oo-p0A" secondAttribute="centerY" id="2h3-Sz-3za"/>
                             <constraint firstItem="BId-Ol-xQi" firstAttribute="top" secondItem="oau-cV-7ui" secondAttribute="bottom" id="3nL-a4-8bD"/>
+                            <constraint firstItem="nVq-tv-Bss" firstAttribute="top" secondItem="dgz-hK-WWt" secondAttribute="top" id="5kf-FR-XlR"/>
+                            <constraint firstItem="nVq-tv-Bss" firstAttribute="leading" secondItem="dgz-hK-WWt" secondAttribute="trailing" constant="12" id="7th-1Q-3kd"/>
                             <constraint firstItem="kAZ-96-b3Z" firstAttribute="trailing" secondItem="msI-TZ-rRI" secondAttribute="trailing" constant="24" id="9Uh-pc-B0D"/>
                             <constraint firstItem="ggs-uN-8G7" firstAttribute="top" secondItem="dgz-hK-WWt" secondAttribute="top" id="GSP-zd-5Ls"/>
                             <constraint firstItem="kAZ-96-b3Z" firstAttribute="trailing" secondItem="Due-C8-1kl" secondAttribute="trailing" id="HKZ-Zi-aCa"/>
+                            <constraint firstItem="ggs-uN-8G7" firstAttribute="leading" secondItem="nVq-tv-Bss" secondAttribute="trailing" constant="12" id="PjI-Fg-9JV"/>
                             <constraint firstItem="oau-cV-7ui" firstAttribute="top" secondItem="vd3-Oo-p0A" secondAttribute="bottom" constant="22" id="RTQ-GF-siT"/>
                             <constraint firstItem="aC2-qw-Lpf" firstAttribute="centerX" secondItem="Sfi-ht-acg" secondAttribute="centerX" id="Ufd-E2-6c4"/>
                             <constraint firstItem="BId-Ol-xQi" firstAttribute="trailing" secondItem="kAZ-96-b3Z" secondAttribute="trailing" id="YXD-57-WNl"/>
@@ -1488,6 +1471,7 @@ Try to find your house</string>
         <image name="User Bar Icon" width="24" height="24"/>
         <image name="User Icon" width="32" height="32"/>
         <image name="message.fill" catalog="system" width="128" height="113"/>
+        <image name="paperclip" catalog="system" width="121" height="128"/>
         <image name="paperplane.fill" catalog="system" width="128" height="118"/>
         <namedColor name="BackgroundAccentColor">
             <color red="0.17299999296665192" green="0.77300000190734863" blue="0.2630000114440918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

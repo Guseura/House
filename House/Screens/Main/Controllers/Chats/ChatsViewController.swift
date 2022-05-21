@@ -78,6 +78,7 @@ class ChatsViewController: BaseViewController {
                     self.group = group
                     self.mainChatTitleLabel.text = group.city + " " + group.street
                     self.mainChatSubtitleLabel.text = group.lastMessage == "" ? "No messages yet" : group.lastMessage
+                    self.tableView.layoutIfNeeded()
                 }
             }
         }

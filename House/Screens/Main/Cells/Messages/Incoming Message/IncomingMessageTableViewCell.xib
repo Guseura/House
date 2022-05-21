@@ -23,16 +23,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="85B-s0-kkB">
-                        <rect key="frame" x="60" y="0.0" width="155" height="93"/>
+                        <rect key="frame" x="60" y="0.0" width="153" height="93"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Доброго ранку! У мене запитання" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9G3-Yr-55Q">
-                                <rect key="frame" x="10" y="24" width="135" height="41"/>
+                                <rect key="frame" x="10" y="24" width="133" height="41"/>
                                 <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="16"/>
                                 <color key="textColor" name="TextWhiteBlack"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16:50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8O-mC-jpK">
-                                <rect key="frame" x="10" y="67" width="24" height="16"/>
+                                <rect key="frame" x="10" y="67" width="25.5" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="HLf-P6-tcx"/>
                                 </constraints>

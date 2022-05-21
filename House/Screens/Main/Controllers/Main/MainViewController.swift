@@ -107,9 +107,12 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cell.post.id, for: indexPath) as! PostTableViewCell
         
+        guard let user = user else { return cell }
         guard let post = posts?[indexPath.row] else { return cell }
-        cell.postTitleLabel.text = post.titleText
-        cell.postSubtitleLabel.text = post.subtitleText
+        
+        cell.postTitleLabel.text = post.description
+        cell.postTimeLabel.text = String(post.date.split(separator: " ")[1])
+        cell.postLikesLabel.text = String(post.likedBy.count)
         
         if post.image == "" {
             cell.postImageViewHeightConstraint.constant = 0
@@ -119,8 +122,20 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             cell.postTitleLabelTopConstraint.constant = 12
         }
         
+        let isLiked = post.likedBy.firstIndex(of: user.uid) ?? -1
+        let currentImage = isLiked == -1 ? UIImage(systemName: "heart") : UIImage(systemName: "heart.fill")
+        cell.likeButton.setImage(currentImage, for: .normal)
+        
+        cell.onLikeButtonPressed = {
+            FirebaseDatabaseManager.shared.likePost(groupName: user.memberOf, index: String(indexPath.row)) { isCompleted in
+                if isCompleted {
+                    print("Cool")
+                }
+            }
+        }
+        
         guard let url = URL(string: post.image) else { return cell }
-        cell.postImageView.load(url: url)
+        cell.postImageView.load(url: url) { image in }
         
         return cell
     }

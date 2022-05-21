@@ -14,7 +14,6 @@ class NewPostViewController: BaseViewController {
     @IBOutlet weak var postImageView: UIImageView!
     
     // Text Fields
-    @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
     
     // Constraints
@@ -56,11 +55,6 @@ class NewPostViewController: BaseViewController {
     }
     
     private func configureTextFields() {
-        titleTextField.attributedPlaceholder = NSAttributedString(
-            string: "Title",    // Localized Title
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.TextLightGray]
-        )
-        
         descriptionTextField.attributedPlaceholder = NSAttributedString(
             string: "Description",    // Localized Description
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.TextLightGray]
@@ -117,14 +111,6 @@ class NewPostViewController: BaseViewController {
     
     @IBAction func createButtonPressed(_ sender: Any) {
         
-        guard let titleText = titleTextField.text, titleText.replacingOccurrences(of: " ", with: "").count != 0 else {
-            if titleTextField.canBecomeFirstResponder {
-                titleTextField.becomeFirstResponder()
-            }
-            showDefaultAlert(title: "Incorrect title", message: "Looks like you didn`t enter title, please enter title and try again.")
-            return
-        }
-        
         guard let descriptionText = descriptionTextField.text, descriptionText.replacingOccurrences(of: " ", with: "").count != 0 else {
             if descriptionTextField.canBecomeFirstResponder {
                 descriptionTextField.becomeFirstResponder()
@@ -135,7 +121,7 @@ class NewPostViewController: BaseViewController {
         
         if isImageChanged {
             guard let image = postImageView.image else { return }
-            FirebaseDatabaseManager.shared.addPost(groupName: self.user.memberOf, image: image, titleText: titleText, subtitleText: descriptionText) { [weak self] isAdded in
+            FirebaseDatabaseManager.shared.addPost(groupName: self.user.memberOf, image: image, description: descriptionText) { [weak self] isAdded in
                 guard let strongSelf = self else { return }
                 if isAdded {
                     strongSelf.navigationController?.popViewController(animated: true)
@@ -144,7 +130,7 @@ class NewPostViewController: BaseViewController {
                 }
             }
         } else {
-            FirebaseDatabaseManager.shared.addPost(groupName: self.user.memberOf, titleText: titleText, subtitleText: descriptionText) { [weak self] isAdded in
+            FirebaseDatabaseManager.shared.addPost(groupName: self.user.memberOf, description: descriptionText) { [weak self] isAdded in
                 guard let strongSelf = self else { return }
                 if isAdded {
                     strongSelf.navigationController?.popViewController(animated: true)

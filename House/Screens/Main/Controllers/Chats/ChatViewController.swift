@@ -46,7 +46,7 @@ class ChatViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         listenForMessages()
-        configure(tableView, with: Cell.incoming, Cell.outgoing)
+        configure(tableView, with: Cell.incoming, Cell.outgoing, Cell.incomingImage, Cell.outgoingImage)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -205,6 +205,18 @@ class ChatViewController: BaseViewController {
         }
     }
     
+    private func sendGroupMessage(image: UIImage) {
+        guard let group = group else { return }
+        let userId = State.shared.getUserId()
+        
+        FirebaseDatabaseManager.shared.getUser(with: userId) { user in
+            let groupName = (group.city + "-" + group.street).replacingOccurrences(of: " ", with: "-")
+            FirebaseDatabaseManager.shared.sendMessage(groupName: groupName, userFromId: userId, image: image) { isSent in
+                isSent ? print("Message was sent!") : print("Message was not sent!")
+            }
+        }
+    }
+    
     private func sendUserMessage() {
         guard let user = user else { return }
         guard let message = messageTextView.text else { return }
@@ -215,12 +227,18 @@ class ChatViewController: BaseViewController {
         }
     }
     
+    private func sendUserMessage(image: UIImage) {
+        guard let user = user else { return }
+        FirebaseDatabaseManager.shared.sendMessage(uid: user.uid, image: image) { isSent in
+            isSent ? print("Message was sent!") : print("Message was not sent!")
+        }
+    }
+    
     
     // MARK: - @IBActions
     
     @IBAction func sendButtonPressed(_ sender: Any) {
-        
-        switch type{
+        switch type {
         case .user:
             sendUserMessage()
             break
@@ -230,7 +248,22 @@ class ChatViewController: BaseViewController {
         case .none:
             break
         }
-        
+    }
+    
+    @IBAction func clipButtonPressed(_ sender: Any) {
+        ImagePickerManager.shared.pickImage(self) { [weak self] image in
+            guard let strongSelf = self else { return }
+            switch strongSelf.type {
+            case .user:
+                strongSelf.sendUserMessage(image: image)
+                break
+            case .group:
+                strongSelf.sendGroupMessage(image: image)
+                break
+            case .none:
+                break
+            }
+        }
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
@@ -252,69 +285,150 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
         let message = messages![indexPath.row]
         let time = String(message.date.split(separator: " ")[1])
         
-        // Outgoing table view cell
-        if message.senderId == State.shared.getUserId() {
-            let cell = tableView.dequeueReusableCell(withIdentifier: Cell.outgoing.id, for: indexPath) as! OutgoingMessageTableViewCell
-            cell.messageTextLabel.text = message.message
-            cell.messageTime.text = time
-            cell.messageBackgroundTopConstraint.constant = 0
-            if indexPath.row == 0 {
-                cell.messageBackgroundTopConstraint.constant = 12
-            }
-            return cell
+        if message.type == "text" {
             
-        // Incoming table view cell
-        } else {
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: Cell.incoming.id, for: indexPath) as! IncomingMessageTableViewCell
-            
-            cell.messageTextLabel.text = message.message
-            cell.messageTimeLabel.text = time
-            
-            cell.messageSenderImage.isHidden = false
-            
-            if indexPath.row != messages!.count-1 {
-                if message.senderId == messages![indexPath.row+1].senderId {
-                    cell.configureWithoutImage()
+            // Outgoing text table view cell
+            if message.senderId == State.shared.getUserId() {
+                let cell = tableView.dequeueReusableCell(withIdentifier: Cell.outgoing.id, for: indexPath) as! OutgoingMessageTableViewCell
+                cell.messageTextLabel.text = message.message
+                cell.messageTime.text = time
+                cell.messageBackgroundTopConstraint.constant = 0
+                if indexPath.row == 0 {
+                    cell.messageBackgroundTopConstraint.constant = 12
                 }
+                return cell
+                
+            // Incoming text table view cell
+            } else {
+                
+                let cell = tableView.dequeueReusableCell(withIdentifier: Cell.incoming.id, for: indexPath) as! IncomingMessageTableViewCell
+                
+                cell.messageTextLabel.text = message.message
+                cell.messageTimeLabel.text = time
+                
+                cell.messageSenderImage.isHidden = false
+                
+                if indexPath.row != messages!.count-1 {
+                    if message.senderId == messages![indexPath.row+1].senderId {
+                        cell.configureWithoutImage()
+                    }
+                }
+                
+                cell.usernameHeightConstraint.constant = 12
+                cell.usernameBottomConstraint.constant = 2
+                cell.messageBackgroundTopConstraint.constant = 0
+                cell.messageUsernameLabel.isHidden = false
+                
+                if indexPath.row != 0 {
+                    if message.senderId == messages![indexPath.row-1].senderId {
+                        cell.usernameHeightConstraint.constant = 0
+                        cell.usernameBottomConstraint.constant = 0
+                        cell.messageUsernameLabel.isHidden = true
+                        return cell
+                    }
+                } else {
+                    cell.messageBackgroundTopConstraint.constant = 12
+                }
+                
+                switch type {
+                case .user:
+                    guard let user = user else { return cell }
+                    cell.messageUsernameLabel.text = user.name
+                    cell.messageSenderImage.image = self.userImageView.image
+                case .group:
+                    FirebaseDatabaseManager.shared.getUser(with: message.senderId) { user in
+                        guard let user = user else { return }
+                        cell.messageUsernameLabel.text = user.name
+                        cell.messageSenderImage.image = user.image
+                    }
+                case .none:
+                    break
+                }
+
+                return cell
+                
             }
-            
-            cell.usernameHeightConstraint.constant = 12
-            cell.usernameBottomConstraint.constant = 2
-            cell.messageBackgroundTopConstraint.constant = 0
-            cell.messageUsernameLabel.isHidden = false
-            
-            if indexPath.row != 0 {
-                if message.senderId == messages![indexPath.row-1].senderId {
-                    cell.usernameHeightConstraint.constant = 0
-                    cell.usernameBottomConstraint.constant = 0
-                    cell.messageUsernameLabel.isHidden = true
+        } else {
+            // Outgoing image cell
+            if message.senderId == State.shared.getUserId() {
+                let cell = tableView.dequeueReusableCell(withIdentifier: Cell.outgoingImage.id, for: indexPath) as! OutgoingImageTableViewCell
+                
+                cell.messageTime.text = time
+                cell.messageBackgroundTopConstraint.constant = 0
+                if indexPath.row == 0 {
+                    cell.messageBackgroundTopConstraint.constant = 12
+                }
+                
+                guard let url = URL(string: message.message) else {
                     return cell
                 }
-            } else {
-                cell.messageBackgroundTopConstraint.constant = 12
-            }
-            
-            switch type {
-            case .user:
-                guard let user = user else { return cell }
-                cell.messageUsernameLabel.text = user.name
-                cell.messageSenderImage.image = self.userImageView.image
-            case .group:
-                FirebaseDatabaseManager.shared.getUser(with: message.senderId) { user in
-                    guard let user = user else { return }
-                    cell.messageUsernameLabel.text = user.name
-                    cell.messageSenderImage.image = user.image
+                cell.messageImage.load(url: url) { image in
+                    DispatchQueue.main.async {
+                        guard let image = image else { return }
+                        cell.messageImage.image = image
+                        cell.layoutIfNeeded()
+                    }
                 }
-            case .none:
-                break
-            }
-
-            return cell
+                return cell
             
+            // Incoming image cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: Cell.incomingImage.id, for: indexPath) as! IncomingImageTableViewCell
+                
+                cell.messageTimeLabel.text = time
+                cell.messageSenderImage.isHidden = false
+                
+                if indexPath.row != messages!.count-1 {
+                    if message.senderId == messages![indexPath.row+1].senderId {
+                        cell.configureWithoutImage()
+                    }
+                }
+                
+                cell.usernameHeightConstraint.constant = 12
+                cell.usernameBottomConstraint.constant = 2
+                cell.messageBackgroundTopConstraint.constant = 0
+                cell.messageUsernameLabel.isHidden = false
+                
+                if indexPath.row != 0 {
+                    if message.senderId == messages![indexPath.row-1].senderId {
+                        cell.usernameHeightConstraint.constant = 0
+                        cell.usernameBottomConstraint.constant = 0
+                        cell.messageUsernameLabel.isHidden = true
+                        return cell
+                    }
+                } else {
+                    cell.messageBackgroundTopConstraint.constant = 12
+                }
+                
+                switch type {
+                case .user:
+                    guard let user = user else { return cell }
+                    cell.messageUsernameLabel.text = user.name
+                    cell.messageSenderImage.image = self.userImageView.image
+                case .group:
+                    FirebaseDatabaseManager.shared.getUser(with: message.senderId) { user in
+                        guard let user = user else { return }
+                        cell.messageUsernameLabel.text = user.name
+                        cell.messageSenderImage.image = user.image
+                    }
+                case .none:
+                    break
+                }
+                
+                guard let url = URL(string: message.message) else {
+                    return cell
+                }
+                cell.messageImage.load(url: url) { image in
+                    DispatchQueue.main.async {
+                        guard let image = image else { return }
+                        cell.messageImage.image = image
+                        cell.layoutIfNeeded()
+                    }
+                }
+                return cell
+            }
         }
     }
-
 }
 
 

@@ -6,20 +6,16 @@ class PostTableViewCell: UITableViewCell {
     
     // Views
     @IBOutlet weak var cellBackgroundView: UIView!
-    @IBOutlet weak var firstOptionView: UIView!
-    @IBOutlet weak var secondOptionView: UIView!
     
     // Labels
     @IBOutlet weak var postTitleLabel: UILabel!
-    @IBOutlet weak var postSubtitleLabel: UILabel!
-    @IBOutlet weak var firstOptionLabel: UILabel!
-    @IBOutlet weak var firstOptionPercentLabel: UILabel!
-    @IBOutlet weak var secondOptionLabel: UILabel!
-    @IBOutlet weak var secondOptionPercentLabel: UILabel!
+    @IBOutlet weak var postTimeLabel: UILabel!
+    @IBOutlet weak var postLikesLabel: UILabel!
+    
+    // Buttons
+    @IBOutlet weak var likeButton: UIButton!
     
     // Image views
-    @IBOutlet weak var firstOptionImageView: UIImageView!
-    @IBOutlet weak var secondOptionImageView: UIImageView!
     @IBOutlet weak var postImageView: UIImageView!
     
     // Constraints
@@ -29,34 +25,23 @@ class PostTableViewCell: UITableViewCell {
     
     // MARK: - Variables
     
-    var firstOptionPressedCompletion: ()->() = {}
-    var secondOptionPressedCompletion: ()->() = {}
+    public var onLikeButtonPressed: () -> () = {}
     
     
     // MARK: - Awake functions
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        contentView.roundCorners(radius: 10)
-        firstOptionView.roundCorners(radius: 5)
-        secondOptionView.roundCorners(radius: 5)
         cellBackgroundView.roundCorners(radius: 10)
-        
-        firstOptionView.addTapGesture(target: self, action: #selector(firstOptionPressed))
-        secondOptionView.addTapGesture(target: self, action: #selector(secondOptionPressed))
-    
+        postImageView.roundCorners(radius: 10, corners: .topLeft, .topRight)
     }
     
     
-    // MARK: - Gesture actions
+    // MARK: - @IBActions
     
-    @objc private func firstOptionPressed() {
-        firstOptionPressedCompletion()
+    @IBAction func likeButtonPressed(_ sender: Any) {
+        onLikeButtonPressed()
     }
     
-    @objc private func secondOptionPressed() {
-        secondOptionPressedCompletion()
-    }
     
 }

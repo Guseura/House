@@ -8,6 +8,8 @@ public enum Cell: String {
     case searchCell     = "SearchTableViewCell"
     case groupCell      = "GroupTableViewCell"
     case incoming       = "IncomingMessageTableViewCell"
+    case incomingImage  = "IncomingImageTableViewCell"
+    case outgoingImage  = "OutgoingImageTableViewCell"
     case outgoing       = "OutgoingMessageTableViewCell"
     case post           = "PostTableViewCell"
     

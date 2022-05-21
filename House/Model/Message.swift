@@ -6,5 +6,6 @@ struct Message {
     let senderId: String
     let date: String
     let isRead: Bool
+    let type: String
     
 }

@@ -127,6 +127,7 @@ class ChatViewController: BaseViewController {
     }
     
     private func configureTextView() {
+        messageTextView.text = localized("chat.write.message")
         messageTextView.delegate = self
         messageTextView.textColor = UIColor.TextLightGray
         messageTextView.layer.cornerRadius = 4
@@ -180,7 +181,7 @@ class ChatViewController: BaseViewController {
             }
             
             if self.messageTextView.text == "" {
-                self.messageTextView.text = "Write message..."
+                self.messageTextView.text = localized("chat.write.message")
                 self.messageTextView.textColor = UIColor.TextLightGray
             }
             
@@ -443,7 +444,7 @@ extension ChatViewController: UITextViewDelegate {
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == "Write message..." {
+        if textView.text == localized("chat.write.message") {
             textView.text = ""
             textView.textColor = UIColor.TextMainColor
         }

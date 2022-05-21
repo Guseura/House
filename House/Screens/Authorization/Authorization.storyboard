@@ -368,8 +368,11 @@
                         <outlet property="bottomConstraint" destination="NkQ-Do-M9M" id="xu1-zR-VqM"/>
                         <outlet property="createAccountLabel" destination="gln-zw-VqN" id="bKM-cT-BOW"/>
                         <outlet property="emailTextField" destination="SVY-Fq-l1I" id="B3Z-Mx-XHt"/>
+                        <outlet property="loginButton" destination="5e1-TO-Wn6" id="p8c-f4-dlq"/>
                         <outlet property="nameTextField" destination="7uc-xn-JqB" id="8sO-Lx-Z5u"/>
+                        <outlet property="orLabel" destination="GeE-w9-pte" id="aCW-ZW-l70"/>
                         <outlet property="passwordTextField" destination="9lS-QP-M1q" id="9nu-CY-UJ0"/>
+                        <outlet property="signUpButton" destination="iBa-UP-a9h" id="7m9-7V-0YY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FdF-HT-Pv8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -593,7 +596,10 @@
                     <connections>
                         <outlet property="bottomConstraint" destination="Ypm-a1-XsT" id="ctI-TP-IJ4"/>
                         <outlet property="emailTextField" destination="bx1-MT-O7c" id="Hsp-dp-csz"/>
+                        <outlet property="loginButton" destination="dzB-PY-QWJ" id="CfN-IV-58W"/>
+                        <outlet property="orLabel" destination="Y5n-pe-8Ht" id="yRn-Zg-m3w"/>
                         <outlet property="passwordTextField" destination="8SG-pH-xyE" id="WD4-O5-CPG"/>
+                        <outlet property="signUpButton" destination="8sI-fN-A4g" id="ijq-Qy-FSW"/>
                         <outlet property="welcomeBackLabel" destination="oSs-pI-EKe" id="ZK8-OG-DcC"/>
                     </connections>
                 </viewController>

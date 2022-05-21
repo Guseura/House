@@ -26,6 +26,13 @@ class GroupPopup: BasePopupViewController {
     
     // MARK: - Custom functions
     
+    override func localize() {
+        titleLabel.localize(with: "popup.title")
+        descriptionLabel.localize(with: "popup.descr")
+        createButton.localize(with: "popup.create")
+        cancelButton.localize(with: "popup.cancel")
+    }
+    
     override func configureUI() {
         popupBackgroundView.roundCorners(radius: 10)
     }

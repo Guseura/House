@@ -22,7 +22,7 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var profileTableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var appTableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var otherTableViewHeightConstraint: NSLayoutConstraint!
-    
+
     
     // MARK: - Awake functions
     
@@ -35,6 +35,7 @@ class ProfileViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        localize()
         isConnectedToNetwork() ? fetchUser() : fetchLocalUser()
     }
     
@@ -46,6 +47,16 @@ class ProfileViewController: BaseViewController {
     
     
     // MARK: - Custom functions
+    
+    override func localize() {
+        settingsLabel.localize(with: "settings.title")
+        appTableView.reloadData()
+        otherTableView.reloadData()
+        profileTableView.reloadData()
+        profileTableViewHeightConstraint.constant = profileTableView.contentHeight
+        appTableViewHeightConstraint.constant = appTableView.contentHeight
+        otherTableViewHeightConstraint.constant = otherTableView.contentHeight
+    }
     
     override func configureUI() {
         userImageView.capsuleCorners()
@@ -92,11 +103,11 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
         case profileTableView:
-            return Setting.profileSettings.count
+            return Setting.getProfileSettings().count
         case appTableView:
-            return Setting.appSettings.count
+            return Setting.getAppSettings().count
         case otherTableView:
-            return Setting.otherSettings.count
+            return Setting.getOtherSettings().count
         default:
             return 0
         }
@@ -107,11 +118,11 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch tableView {
         case profileTableView:
-            cell.cellLabel.text = Setting.profileSettings[indexPath.row].name
+            cell.cellLabel.text = Setting.getProfileSettings()[indexPath.row].name
         case appTableView:
-            cell.cellLabel.text = Setting.appSettings[indexPath.row].name
+            cell.cellLabel.text = Setting.getAppSettings()[indexPath.row].name
         case otherTableView:
-            cell.cellLabel.text = Setting.otherSettings[indexPath.row].name
+            cell.cellLabel.text = Setting.getOtherSettings()[indexPath.row].name
         default:
             return cell
         }
@@ -123,16 +134,18 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch tableView {
         case profileTableView:
-            Setting.profileSettings[indexPath.row].completion(self)
+            Setting.getProfileSettings()[indexPath.row].completion(self)
         case appTableView:
-            Setting.appSettings[indexPath.row].completion(self)
+            Setting.getAppSettings()[indexPath.row].completion(self)
         case otherTableView:
-            Setting.otherSettings[indexPath.row].completion(self)
+            Setting.getOtherSettings()[indexPath.row].completion(self)
         default:
             return
             
         }
     }
+    
+    
     
 }
 

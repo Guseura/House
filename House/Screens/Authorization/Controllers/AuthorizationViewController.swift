@@ -7,6 +7,11 @@ class AuthorizationViewController: BaseViewController {
     
     // Labels
     @IBOutlet weak var welcomeBackLabel: UILabel!
+    @IBOutlet weak var orLabel: UILabel!
+    
+    // Buttons
+    @IBOutlet weak var loginButton: MainButton!
+    @IBOutlet weak var signUpButton: SecondaryButton!
     
     // Text Fields
     @IBOutlet weak var emailTextField: UITextField!
@@ -33,18 +38,25 @@ class AuthorizationViewController: BaseViewController {
     
     // MARK: - Custom functions
     
+    override func localize() {
+        welcomeBackLabel.localize(with: "welcome")
+        loginButton.localize(with: "login")
+        signUpButton.localize(with: "signup")
+        orLabel.localize(with: "or")
+    }
+    
     override func configureUI() {
         configureTextFields()
     }
     
     private func configureTextFields() {
         emailTextField.attributedPlaceholder = NSAttributedString(
-            string: "Email",    // Localized Email
+            string: localized("email"),
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.TextLightGray]
         )
         
         passwordTextField.attributedPlaceholder = NSAttributedString(
-            string: "Password",    // Localized Password
+            string: localized("password"),
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.TextLightGray]
         )
     }
@@ -90,7 +102,7 @@ class AuthorizationViewController: BaseViewController {
         
         FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
             guard authResult != nil, error == nil else {
-                self.showDefaultAlert(title: "Not found", message: "There is no user with such email and password, please check your data and try again.")
+                self.showDefaultAlert(title: localized("notfound"), message: localized("notfound.description"))
                 return
             }
             

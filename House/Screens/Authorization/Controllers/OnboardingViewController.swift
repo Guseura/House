@@ -1,10 +1,3 @@
-//
-//  OnboardingViewController.swift
-//  House
-//
-//  Created by Yurij on 08.03.2022.
-//
-
 import UIKit
 
 class OnboardingViewController: BaseViewController {
@@ -35,6 +28,10 @@ class OnboardingViewController: BaseViewController {
     
     
     // MARK: - Custom functions
+    
+    override func localize() {
+        continueButton.localize(with: "onboarding.button.continue")
+    }
     
     override func configureUI() {
         self.view.backgroundColor = UIColor.BackgroundMainColor

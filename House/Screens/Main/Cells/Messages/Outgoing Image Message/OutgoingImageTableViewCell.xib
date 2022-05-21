@@ -25,8 +25,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="neZ-6E-nwf">
                         <rect key="frame" x="23" y="0.0" width="208" height="234"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16:50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wV5-4c-fnn">
-                                <rect key="frame" x="172.5" y="212" width="25.5" height="12"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wV5-4c-fnn">
+                                <rect key="frame" x="198" y="212" width="0.0" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="12" id="O0W-lz-zB0"/>
                                 </constraints>

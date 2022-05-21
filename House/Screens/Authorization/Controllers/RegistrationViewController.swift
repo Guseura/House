@@ -6,7 +6,12 @@ class RegistrationViewController: BaseViewController {
     // MARK: - @IBOutlets
     
     // Labels
+    @IBOutlet weak var orLabel: UILabel!
     @IBOutlet weak var createAccountLabel: UILabel!
+    
+    // Buttons
+    @IBOutlet weak var signUpButton: MainButton!
+    @IBOutlet weak var loginButton: SecondaryButton!
     
     // Text Fields
     @IBOutlet weak var nameTextField: UITextField!
@@ -34,23 +39,30 @@ class RegistrationViewController: BaseViewController {
     
     // MARK: - Custom functions
     
+    override func localize() {
+        createAccountLabel.localize(with: "registration.create")
+        loginButton.localize(with: "login")
+        signUpButton.localize(with: "signup")
+        orLabel.localize(with: "or")
+    }
+    
     override func configureUI() {
         configureTextFields()
     }
     
     private func configureTextFields() {
         nameTextField.attributedPlaceholder = NSAttributedString(
-            string: "Full name",    // Localized Full name
+            string: localized("registration.fullname"),
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.TextLightGray]
         )
         
         emailTextField.attributedPlaceholder = NSAttributedString(
-            string: "Email",        // Localized Email
+            string: localized("email"),
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.TextLightGray]
         )
         
         passwordTextField.attributedPlaceholder = NSAttributedString(
-            string: "Password",    // Localized Password
+            string: localized("password"),
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.TextLightGray]
         )
     }
@@ -97,7 +109,7 @@ class RegistrationViewController: BaseViewController {
             if nameTextField.canBecomeFirstResponder {
                 nameTextField.becomeFirstResponder()
             }
-            showDefaultAlert(title: "Incorrect name", message: "Looks like you didn`t enter your name, please enter your name and try again.")
+            showDefaultAlert(title: localized("Incorrect name"), message: localized("registration.error.name.descr"))
             return
         }
         
@@ -105,7 +117,7 @@ class RegistrationViewController: BaseViewController {
             if emailTextField.canBecomeFirstResponder {
                 emailTextField.becomeFirstResponder()
             }
-            showDefaultAlert(title: "Incorrect email", message: "Looks like email has incorrect format, please check it and try again.")
+            showDefaultAlert(title: localized("registration.error.email.title"), message: localized("registration.error.email.descr"))
             return
         }
         
@@ -113,14 +125,14 @@ class RegistrationViewController: BaseViewController {
             if passwordTextField.canBecomeFirstResponder {
                 passwordTextField.becomeFirstResponder()
             }
-            showDefaultAlert(title: "Incorrect password", message: "Looks like password contain forbidden characters or it isn`t longer than 7 characters")
+            showDefaultAlert(title: localized("registration.error.password.title"), message: localized("registration.error.password.descr"))
             return
         }
             
         FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             
             guard error == nil else {
-                self.showDefaultAlert(title: "User exists", message: "Looks like user account with this email already exist.")
+                self.showDefaultAlert(title: localized("registration.error.user.exist.title"), message: localized("registration.error.user.exist.descr"))
                 return
             }
             

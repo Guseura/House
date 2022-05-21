@@ -34,6 +34,11 @@ class EditImageViewController: BaseViewController {
     
     // MARK: - Custom functions
     
+    override func localize() {
+        editLabel.localize(with: "settings.edit.image")
+        saveButton.localize(with: "settings.save")
+    }
+    
     override func configureUI() {
         tableView.roundCorners(radius: 10)
         userImage.capsuleCorners()
@@ -66,7 +71,6 @@ class EditImageViewController: BaseViewController {
         }
     }
     
-    
 }
 
 extension EditImageViewController: UITableViewDelegate, UITableViewDataSource {
@@ -77,7 +81,7 @@ extension EditImageViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cell.settingsCell.id, for: indexPath) as! SettingsTableViewCell
-        cell.cellLabel.text = indexPath.row == 0 ? "New image" : "Delete image"
+        cell.cellLabel.text = indexPath.row == 0 ? localized("settings.new.image") : localized("settings.delete.image")
         return cell
     }
     

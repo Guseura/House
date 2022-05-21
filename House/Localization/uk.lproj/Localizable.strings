@@ -1,1 +1,110 @@
 
+// MARK: - UA
+// MARK: - Onboarding
+
+"onboarding.first.title"        = "Спілкуйтеся";
+"onboarding.first.description"  = "Спілкуйтеся між мешканцями будинку в зручному чаті.";
+
+"onboarding.second.title"       = "Вирішуйте проблеми";
+"onboarding.second.description" = "Обговорюйте проблеми, які хвилюють мешканців будинку та вирішуйте їх.";
+
+"onboarding.third.title"        = "Поширюйте новини";
+"onboarding.third.description"  = "Діліться новинами з іншими мешканцями в розділі новини.";
+
+"onboarding.button.continue"    = "Продовжити";
+
+
+// MARK: - Authorization
+
+"welcome"               = "З Вашим\nповерненням!";
+"email"                 = "Електронна адреса";
+"password"              = "Пароль";
+"login"                 = "Увійти";
+"or"                    = "або";
+"signup"                = "Зареєструватися";
+"notfound"              = "Користувача не знайдено";
+"notfound.description"  = "Схоже що користувача з такими данними не існує. Перевірити введені дані та спробуйте знову.";
+
+
+// MARK: - Registration
+
+"registration.create"                   = "Створити\nАкаунт";
+"registration.fullname"                 = "Повне ім'я";
+
+"registration.error.name.title"         = "Ім'я введене не правильно";
+"registration.error.name.descr"         = "Схоже, ви не ввели своє ім’я, будь ласка, введіть своє ім’я та повторіть спробу.";
+
+"registration.error.email.title"        = "Електронна пошта введена не правильно";
+"registration.error.email.descr"        = "Схоже, електронна пошта має неправильний формат, перевірте його та повторіть спробу.";
+
+"registration.error.password.title"     = "Пароль введений не правильно";
+"registration.error.password.descr"     = "Схоже, пароль містить заборонені символи або він коротший за 7 символів";
+
+"registration.error.user.exist.title"   = "Користувач вже існує";
+"registration.error.user.exist.descr"   = "Схоже користувач з таким акаунтом вже зареєстрований";
+
+
+// MARK: - Main
+
+"main.title"                            = "Новини";
+"main.search"                           = "Пошук";
+"main.nogroups.title"                   = "Немає новин";
+"main.nogroups.description"             = "Ви не є учасником жодного ОСББ.\nСпробуйте знайти ОСББ";
+
+
+// MARK: - New Post
+
+"new.post.title"                        = "Створити допис";
+"new.post.description"                  = "Опис";
+"new.post.create"                       = "Створити";
+"new.post.error.title"                  = "Опис не введений";
+"new.post.error.descr"                  = "Схоже, ви не ввели опис, будь ласка, введіть опис і спробуйте знову.";
+
+
+// MARK: - Chats
+
+"chats.title"                           = "Чати";
+"chats.no.chats.title"                  = "Немає чатів";
+"chats.no.chats.description"            = "Ви не є учасником жодного ОСББ.\nСпробуйте знайти ОСББ";
+"chats.search"                          = "Пошук";
+"chats.no.messages.yet"                 = "Повідомлень немає";
+
+// MARK: - Popup
+
+"popup.title"   = "ОСББ не знайдено";
+"popup.descr"   = "Чи хотіли б Ви створити нову групу ОСББ для Вас та Ваших сусідів?";
+"popup.create"  = "Створити";
+"popup.cancel"  = "Скасувати";
+
+
+// MARK: - Create group
+
+"create.group.title"    = "Створити групу";
+"create.group.create"   = "Створити";
+"create.group.city"     = "Місто";
+"create.group.street"   = "Вулиця";
+
+
+// MARK: - Street
+
+"street.choose"         = "Обрати";
+"street.error.title"    = "Вулиця введена не правильно";
+"street.error.descr"    = "Схоже, ви не вказали свою вулицю, будь ласка, введіть свою вулицю та повторіть спробу.";
+
+
+// MARK: - Chat
+
+"chat.write.message"    = "Напишіть повідомлення...";
+
+
+// MARK: - Settings
+
+"settings.title"        = "Налаштування";
+"settings.edit.name"    = "Змінити ім'я";
+"settings.edit.image"   = "Змінити фото";
+"settings.language"     = "Мова";
+"settings.logout"       = "Вийти";
+"settings.change"       = "Змінити";
+"settings.save"         = "Зберегти";
+"settings.new.image"    = "Нове фото";
+"settings.delete.image" = "Видалити фото";

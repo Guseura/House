@@ -32,8 +32,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t3v-L5-ZWR">
                         <rect key="frame" x="60" y="0.0" width="220" height="252"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMw-jX-GfU">
-                                <rect key="frame" x="10" y="10" width="6.5" height="12"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMw-jX-GfU">
+                                <rect key="frame" x="10" y="10" width="0.0" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="12" id="UUa-sE-CqU"/>
                                 </constraints>
@@ -48,8 +48,8 @@
                                     <constraint firstAttribute="width" secondItem="0FJ-yK-njO" secondAttribute="height" multiplier="1:1" id="tXd-KL-vPE"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16:50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8m-vI-gS3">
-                                <rect key="frame" x="10" y="226" width="24" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8m-vI-gS3">
+                                <rect key="frame" x="10" y="226" width="0.0" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="7uR-3g-ZNq"/>
                                 </constraints>

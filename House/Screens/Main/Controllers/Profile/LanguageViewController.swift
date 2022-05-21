@@ -20,11 +20,11 @@ class LanguageViewController: BaseViewController {
         configure(tableView, with: Cell.languageCell)
     }
     
-    override func viewDidLayoutSubviews() {
-        tableViewHeightConstraint.constant = tableView.contentHeight
-    }
-    
     // MARK: - Custom functions
+    
+    override func localize() {
+        languageLabel.localize(with: "settings.language")
+    }
     
     override func configureUI() {
         tableView.roundCorners(radius: 10)
@@ -56,6 +56,7 @@ extension LanguageViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         State.shared.setLanguage(to: Language.languages[indexPath.row].code)
         tableView.reloadData()
+        self.localize()
     }
     
 }

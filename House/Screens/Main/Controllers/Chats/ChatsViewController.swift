@@ -57,6 +57,13 @@ class ChatsViewController: BaseViewController {
     
     // MARK: - Custom functions
     
+    override func localize() {
+        titleLabel.localize(with: "chats.title")
+        noChatsLabel.localize(with: "chats.no.chats.title")
+        noChatsDescriptionLabel.localize(with: "chats.no.chats.description")
+        searchChatButton.localize(with: "chats.search")
+    }
+    
     override func configureUI() {
         mainChatBackgroundView.roundCorners(radius: 10)
         tableView.roundCorners(radius: 10)
@@ -77,7 +84,7 @@ class ChatsViewController: BaseViewController {
                     guard let group = group else { return }
                     self.group = group
                     self.mainChatTitleLabel.text = group.city + " " + group.street
-                    self.mainChatSubtitleLabel.text = group.lastMessage == "" ? "No messages yet" : group.lastMessage
+                    self.mainChatSubtitleLabel.text = group.lastMessage == "" ? localized("chats.no.messages.yet") : group.lastMessage
                     self.tableView.layoutIfNeeded()
                 }
             }

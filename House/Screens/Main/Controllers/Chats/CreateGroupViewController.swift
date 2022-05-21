@@ -7,6 +7,9 @@ class CreateGroupViewController: BaseViewController {
     // Labels
     @IBOutlet weak var createLabel: UILabel!
     
+    // Button
+    @IBOutlet weak var createButton: UIButton!
+    
     // Table Views
     @IBOutlet weak var tableView: UITableView!
     
@@ -16,11 +19,13 @@ class CreateGroupViewController: BaseViewController {
     
     // MARK: - Variables
     
-    var city = "City" { didSet {
+    var city = localized("create.group.city") {
+        didSet {
             self.tableView.reloadData()
         }
     }
-    var street = "Street" { didSet {
+    var street = localized("create.group.street") {
+        didSet {
             self.tableView.reloadData()
         }
     }
@@ -40,6 +45,11 @@ class CreateGroupViewController: BaseViewController {
     
     // MARK: - Custom functions
     
+    override func localize() {
+        createLabel.localize(with: "create.group.title")
+        createButton.localize(with: "create.group.create")
+    }
+    
     override func configureUI() {
         tableView.roundCorners(radius: 10)
     }
@@ -47,7 +57,7 @@ class CreateGroupViewController: BaseViewController {
     // MARK: - @IBActions
     
     @IBAction func createButtonPressed(_ sender: Any) {
-        if city != "City" && street != "Street" {
+        if city != localized("create.group.city") && street != localized("create.group.street") {
             let userId = State.shared.getUserId()
             FirebaseDatabaseManager.shared.insertOSBB(creatorId: userId, city: city, street: street) { isCompleted in
                 if isCompleted {

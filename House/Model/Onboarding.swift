@@ -14,9 +14,9 @@ struct Onboarding {
     let image: UIImage
     
     static let onboardingItems: [Onboarding] = [
-        Onboarding(title: "Communicate", subtitle: "Chat between residents of the house in a convenient chat room.", image: UIImage.Onboarding.first),
-        Onboarding(title: "Solve problems", subtitle: "Put forward problems that you would like to eliminate in your area.", image: UIImage.Onboarding.second),
-        Onboarding(title: "Payments", subtitle: "Make your payments conveniently. Do it with comfort in our App.", image: UIImage.Onboarding.third)
+        Onboarding(title: localized("onboarding.first.title"), subtitle: localized("onboarding.first.description"), image: UIImage.Onboarding.first),
+        Onboarding(title: localized("onboarding.second.title"), subtitle: localized("onboarding.second.description"), image: UIImage.Onboarding.second),
+        Onboarding(title: localized("onboarding.third.title"), subtitle: localized("onboarding.third.description"), image: UIImage.Onboarding.third)
     ]
 }
 

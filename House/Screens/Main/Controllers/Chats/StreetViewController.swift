@@ -23,7 +23,15 @@ class StreetViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    
+    // MARK: - Custom functions
+    
+    override func localize() {
+        streetLabel.localize(with: "create.group.street")
+        chooseButton.localize(with: "street.choose")
+        textField.placeholder = localized("create.group.street")
     }
     
 
@@ -38,7 +46,7 @@ class StreetViewController: BaseViewController {
             if textField.canBecomeFirstResponder {
                 textField.becomeFirstResponder()
             }
-            showDefaultAlert(title: "Incorrect street", message: "Looks like you didn`t enter your street, please enter your street and try again.")
+            showDefaultAlert(title: localized("street.error.title"), message: localized("street.error.descr"))
             return
         }
         completion(street)

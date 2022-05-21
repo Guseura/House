@@ -1,1 +1,111 @@
 
+// MARK: - EN
+// MARK: - Onboarding
+
+"onboarding.first.title"                = "Communicate";
+"onboarding.first.description"          = "Chat between residents of the house in a convenient chat room.";
+
+"onboarding.second.title"               = "Solve problems";
+"onboarding.second.description"         = "Put forward problems that you would like to eliminate in your area.";
+
+"onboarding.third.title"                = "Share news";
+"onboarding.third.description"          = "Share the news between residents of the house in the news section.";
+
+"onboarding.button.continue"            = "Continue";
+
+
+// MARK: - Authorization
+
+"welcome"                               = "Welcome\nBack";
+"email"                                 = "Email";
+"password"                              = "Password";
+"login"                                 = "Log in";
+"or"                                    = "or";
+"signup"                                = "Sing up";
+"notfound"                              = "User not found";
+"notfound.description"                  = "It seems that there is no user with such data. Please check your input and try again.";
+
+
+// MARK: - Registration
+
+"registration.create"                   = "Create\nAccount";
+"registration.fullname"                 = "Full name";
+
+"registration.error.name.title"         = "Incorrect name";
+"registration.error.name.descr"         = "Looks like you didn`t enter your name, please enter your name and try again.";
+
+"registration.error.email.title"        = "Incorrect email";
+"registration.error.email.descr"        = "Looks like email has incorrect format, please check it and try again.";
+
+"registration.error.password.title"     = "Incorrect password";
+"registration.error.password.descr"     = "Looks like password contain forbidden characters or it isn`t longer than 7 characters";
+
+"registration.error.user.exist.title"   = "User exists";
+"registration.error.user.exist.descr"   = "Looks like user account with this email already exist.";
+
+
+// MARK: - Main
+
+"main.title"                            = "News";
+"main.search"                           = "Search";
+"main.nogroups.title"                   = "No news";
+"main.nogroups.description"             = "You are not a member of any group.\nTry to find your house";
+
+
+// MARK: - New Post
+
+"new.post.title"                        = "Create post";
+"new.post.description"                  = "Description";
+"new.post.create"                       = "Create";
+"new.post.error.title"                  = "Incorrect description";
+"new.post.error.descr"                  = "Looks like you didn`t enter description, please enter description and try again.";
+
+
+// MARK: - Chats
+
+"chats.title"                           = "Chats";
+"chats.no.chats.title"                  = "No chats";
+"chats.no.chats.description"            = "You are not a member of any group.\nTry to find your house";
+"chats.search"                          = "Search";
+"chats.no.messages.yet"                 = "No messages yet";
+
+
+// MARK: - Popup
+
+"popup.title"   = "Group was`t found";
+"popup.descr"   = "Would you like to create new group for you and your neighboors?";
+"popup.create"  = "Create new";
+"popup.cancel"  = "Cancel";
+
+
+// MARK: - Create group
+
+"create.group.title"    = "Create group";
+"create.group.create"   = "Create";
+"create.group.city"     = "City";
+"create.group.street"   = "Street";
+
+
+// MARK: - Street
+
+"street.choose"         = "Choose";
+"street.error.title"    = "Incorrect street";
+"street.error.descr"    = "Looks like you didn`t enter your street, please enter your street and try again.";
+
+
+// MARK: - Chat
+
+"chat.write.message"    = "Write message...";
+
+
+// MARK: - Settings
+
+"settings.title"        = "Settings";
+"settings.edit.name"    = "Edit name";
+"settings.edit.image"   = "Edit image";
+"settings.language"     = "Language";
+"settings.logout"       = "Log out";
+"settings.change"       = "Change";
+"settings.save"         = "Save";
+"settings.new.image"    = "New image";
+"settings.delete.image" = "Delete image";

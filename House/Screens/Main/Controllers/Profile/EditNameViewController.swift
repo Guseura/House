@@ -21,9 +21,15 @@ class EditNameViewController: BaseViewController {
     
     // MARK: - Custom functions
     
+    override func localize() {
+        changeButton.localize(with: "settings.change")
+        changeNameLabel.localize(with: "settings.edit.name")
+        nameTextField.placeholder = "registration.fullname"
+    }
+    
     override func configureUI() {
         nameTextField.attributedPlaceholder = NSAttributedString(
-            string: "Full name",
+            string: localized("registration.fullname"),
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.TextLightGray]
         )
     }

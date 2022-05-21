@@ -45,6 +45,11 @@ class NewPostViewController: BaseViewController {
     
     // MARK: - Custom functions
     
+    override func localize() {
+        createButton.localize(with: "new.post.create")
+        titleLabel.localize(with: "new.post.title")
+    }
+    
     override func configureUI() {
         postImageView.roundCorners(radius: 10)
         configureTextFields()
@@ -56,7 +61,7 @@ class NewPostViewController: BaseViewController {
     
     private func configureTextFields() {
         descriptionTextField.attributedPlaceholder = NSAttributedString(
-            string: "Description",    // Localized Description
+            string: localized("new.post.description"),
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.TextLightGray]
         )
     }
@@ -115,7 +120,7 @@ class NewPostViewController: BaseViewController {
             if descriptionTextField.canBecomeFirstResponder {
                 descriptionTextField.becomeFirstResponder()
             }
-            showDefaultAlert(title: "Incorrect description", message: "Looks like you didn`t enter description, please enter description and try again.")
+            showDefaultAlert(title: localized("new.post.error.title"), message: localized("Looks like you didn`t enter description, please enter description and try again."))
             return
         }
         

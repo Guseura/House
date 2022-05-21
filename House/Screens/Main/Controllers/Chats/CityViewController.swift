@@ -34,6 +34,11 @@ class CityViewController: BaseViewController {
     
     // MARK: - Custom functions
     
+    override func localize() {
+        searchLabel.localize(with: "create.group.city")
+        searchBar.placeholder = localized("chats.search")
+    }
+    
     override func configureUI() {
         tableView.roundCorners(radius: 10)
     }

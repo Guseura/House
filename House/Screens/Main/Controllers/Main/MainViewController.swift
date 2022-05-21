@@ -44,6 +44,13 @@ class MainViewController: BaseViewController {
     
     // MARK: - Custom functions
     
+    override func localize() {
+        titleLabel.localize(with: "main.title")
+        searchButton.localize(with: "main.search")
+        noChatsLabel.localize(with: "main.nogroups.title")
+        noChatsDescriptionLabel.localize(with: "main.nogroups.description")
+    }
+    
     private func fetchData() {
         let uid = State.shared.getUserId()
         FirebaseDatabaseManager.shared.getUser(with: uid) { user in
@@ -127,11 +134,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.likeButton.setImage(currentImage, for: .normal)
         
         cell.onLikeButtonPressed = {
-            FirebaseDatabaseManager.shared.likePost(groupName: user.memberOf, index: String(indexPath.row)) { isCompleted in
-                if isCompleted {
-                    print("Cool")
-                }
-            }
+            FirebaseDatabaseManager.shared.likePost(groupName: user.memberOf, index: String(indexPath.row)) { isCompleted in }
         }
         
         guard let url = URL(string: post.image) else { return cell }

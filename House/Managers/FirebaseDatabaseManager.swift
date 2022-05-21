@@ -338,14 +338,14 @@ extension FirebaseDatabaseManager {
         database.child(conversationId).observe(.value) { dataSnapshot in
             
             guard let data = dataSnapshot.value as? NSDictionary else {
-                completion("No messages yet")
+                completion(localized("chats.no.messages.yet"))
                 return
             }
             
             let message = data["last_message"] as? String ?? ""
             
             if message == "" {
-                completion("No messages yet")
+                completion(localized("chats.no.messages.yet"))
                 return
             }
             

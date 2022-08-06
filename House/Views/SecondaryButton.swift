@@ -15,6 +15,6 @@ class SecondaryButton: UIButton {
         setBorder(width: 1, color: UIColor.TextLightGray)
         setTitleColor(UIColor.TextLightGray, for: .normal)
         titleLabel?.font = UIFont.circularFont(ofSize: 20, weight: .bold)
-    }
+    } 
     
 }

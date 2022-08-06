@@ -28,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dtd-YF-htD">
-                                <rect key="frame" x="24" y="76" width="78.5" height="32"/>
+                                <rect key="frame" x="24" y="76" width="76" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="dev-tv-xih"/>
                                 </constraints>
@@ -122,7 +122,7 @@ Try to find your house</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1921.7391304347827" y="-670.3125"/>
+            <point key="canvasLocation" x="1804" y="-626"/>
         </scene>
         <!--New Post View Controller-->
         <scene sceneID="WsH-Kx-fv4">
@@ -133,7 +133,7 @@ Try to find your house</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create post" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASd-Ka-glY">
-                                <rect key="frame" x="142" y="63.5" width="130.5" height="25.5"/>
+                                <rect key="frame" x="144.5" y="63.5" width="125.5" height="25.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25.5" id="r38-5o-8el"/>
                                 </constraints>
@@ -256,7 +256,7 @@ Try to find your house</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zBN-wY-s0K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2698.5507246376815" y="-670.3125"/>
+            <point key="canvasLocation" x="2528" y="-626"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="H62-Yh-s1Q">
@@ -284,7 +284,7 @@ Try to find your house</string>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8eq-Pb-qOt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="74"/>
+            <point key="canvasLocation" x="-19" y="-311"/>
         </scene>
         <!--Chats-->
         <scene sceneID="UCP-9u-dAn">
@@ -407,7 +407,7 @@ Try to find your house</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYJ-Lr-ENw">
-                                <rect key="frame" x="24" y="76" width="82" height="32"/>
+                                <rect key="frame" x="24" y="76" width="79" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="Tbp-cT-12l"/>
                                 </constraints>
@@ -460,7 +460,7 @@ Try to find your house</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pMd-95-VaO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1921.7391304347827" y="73.660714285714278"/>
+            <point key="canvasLocation" x="1803" y="44"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="gdd-zY-a5S">
@@ -475,7 +475,7 @@ Try to find your house</string>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHm-IK-066">
-                                <rect key="frame" x="168.5" y="63.5" width="77.5" height="25.5"/>
+                                <rect key="frame" x="169.5" y="63.5" width="75.5" height="25.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25.5" id="aQL-pa-YuP"/>
                                 </constraints>
@@ -538,7 +538,7 @@ Try to find your house</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fe1-Cs-TGo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2698.5507246376815" y="73.660714285714278"/>
+            <point key="canvasLocation" x="2528" y="44"/>
         </scene>
         <!--Group Popup-->
         <scene sceneID="sCs-0K-Lu1">
@@ -631,7 +631,7 @@ Try to find your house</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sp3-u7-o2K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3457.971014492754" y="73.660714285714278"/>
+            <point key="canvasLocation" x="2494" y="1470"/>
         </scene>
         <!--Create Group View Controller-->
         <scene sceneID="aXM-uZ-L7e">
@@ -642,7 +642,7 @@ Try to find your house</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create group" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fvw-ZO-g6a">
-                                <rect key="frame" x="133" y="63.5" width="148.5" height="25.5"/>
+                                <rect key="frame" x="137" y="63.5" width="140.5" height="25.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25.5" id="MSG-ZP-8lM"/>
                                 </constraints>
@@ -707,7 +707,7 @@ Try to find your house</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3lG-bG-mbd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4232" y="74"/>
+            <point key="canvasLocation" x="3251" y="-626"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="BsM-mN-fTS">
@@ -843,7 +843,7 @@ Try to find your house</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XhC-mZ-uHQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1922" y="804"/>
+            <point key="canvasLocation" x="1803" y="804"/>
         </scene>
         <!--Edit Image View Controller-->
         <scene sceneID="ymD-TO-jMs">
@@ -854,7 +854,7 @@ Try to find your house</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit image" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3x-gA-uSb">
-                                <rect key="frame" x="148" y="63.5" width="118.5" height="25.5"/>
+                                <rect key="frame" x="150" y="63.5" width="114" height="25.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25.5" id="sDB-V0-42z"/>
                                 </constraints>
@@ -929,7 +929,7 @@ Try to find your house</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jAr-Ic-kkD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3459" y="804"/>
+            <point key="canvasLocation" x="1093" y="1470"/>
         </scene>
         <!--Language View Controller-->
         <scene sceneID="tqA-uf-dLh">
@@ -940,7 +940,7 @@ Try to find your house</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTG-6h-IoF">
-                                <rect key="frame" x="152.5" y="63.5" width="109.5" height="25.5"/>
+                                <rect key="frame" x="154" y="63.5" width="106.5" height="25.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25.5" id="jtL-Fl-FWc"/>
                                 </constraints>
@@ -990,7 +990,7 @@ Try to find your house</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tkn-dk-s5h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4232" y="804"/>
+            <point key="canvasLocation" x="1803" y="1470"/>
         </scene>
         <!--Edit Name View Controller-->
         <scene sceneID="yMy-ks-bM9">
@@ -1001,7 +1001,7 @@ Try to find your house</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vni-l5-xSu">
-                                <rect key="frame" x="151.5" y="63.5" width="111.5" height="25.5"/>
+                                <rect key="frame" x="153" y="63.5" width="108.5" height="25.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25.5" id="BhZ-Gh-BS5"/>
                                 </constraints>
@@ -1095,7 +1095,7 @@ Try to find your house</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5We-Cp-NgE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2701" y="804"/>
+            <point key="canvasLocation" x="2493" y="804"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="A4N-9H-NKh">
@@ -1134,7 +1134,7 @@ Try to find your house</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ukP-5o-lab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1092.753623188406" y="73.660714285714278"/>
+            <point key="canvasLocation" x="1093" y="44"/>
         </scene>
         <!--City View Controller-->
         <scene sceneID="n1W-RT-QM0">
@@ -1149,7 +1149,7 @@ Try to find your house</string>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fr-X1-VAa">
-                                <rect key="frame" x="183" y="63.5" width="48" height="25.5"/>
+                                <rect key="frame" x="186" y="63.5" width="42.5" height="25.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25.5" id="tc7-j1-w70"/>
                                 </constraints>
@@ -1198,7 +1198,7 @@ Try to find your house</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="31Y-cw-eRd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5009" y="74"/>
+            <point key="canvasLocation" x="3251" y="44"/>
         </scene>
         <!--Street View Controller-->
         <scene sceneID="Yjn-Vj-4DI">
@@ -1209,7 +1209,7 @@ Try to find your house</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Street" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ox1-77-Yvt">
-                                <rect key="frame" x="173" y="63.5" width="68.5" height="25.5"/>
+                                <rect key="frame" x="175" y="63.5" width="64.5" height="25.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25.5" id="iZX-Gp-Sms"/>
                                 </constraints>
@@ -1293,7 +1293,7 @@ Try to find your house</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S0f-63-v9t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5772" y="74"/>
+            <point key="canvasLocation" x="3180" y="804"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="2LL-q1-huf">
@@ -1439,7 +1439,7 @@ Try to find your house</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TLs-uG-oJG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6531.884057971015" y="73.660714285714278"/>
+            <point key="canvasLocation" x="3180" y="1470"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="k5r-He-gf4">
@@ -1457,7 +1457,7 @@ Try to find your house</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ANl-Wf-nLI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1092.753623188406" y="-670.3125"/>
+            <point key="canvasLocation" x="1093" y="-626"/>
         </scene>
     </scenes>
     <resources>

@@ -1,6 +1,7 @@
 import Foundation
 
 struct City: Codable {
+    
     let cities: [String]
     
     public static var all: [String] = []

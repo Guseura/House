@@ -40,6 +40,7 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
 
         viewController.present(alert, animated: true, completion: nil)
     }
+    
     func openCamera(){
         alert.dismiss(animated: true, completion: nil)
         if(UIImagePickerController .isSourceTypeAvailable(.camera)){
@@ -55,6 +56,7 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
             viewController?.present(alertController, animated: true)
         }
     }
+    
     func openGallery(){
         alert.dismiss(animated: true, completion: nil)
         picker.sourceType = .photoLibrary

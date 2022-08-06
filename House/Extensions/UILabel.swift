@@ -2,6 +2,10 @@ import UIKit
 
 extension UILabel {
     
+    public func localize(with key: String) {
+        self.text = localized(key)
+    }
+    
     public func setLineHeight(lineHeight: CGFloat) {
         let text = self.text
         if let text = text {
@@ -18,10 +22,6 @@ extension UILabel {
         self.setLineHeight(lineHeight: lineSpacing)
         self.sizeToFit()
         return self.frame.height
-    }
-    
-    public func localize(with key: String) {
-        self.text = localized(key)
     }
     
 }
